@@ -1,0 +1,188 @@
+package fleet.car.model;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+
+@Entity
+@Table(name = "car_cars")
+public class Car {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+
+    @Column(name = "car_name")
+    private String carName;
+
+    public String getCarName() {
+        return carName;
+    }
+
+    public void setCarName(String carName) {
+        this.carName = carName;
+    }
+
+
+    @Column(name = "car_comments")
+    private String carDescription;
+
+    public String getCarDescription() {
+        return carDescription;
+    }
+
+    public void setCarDescription(String carDescription) {
+        this.carDescription = carDescription;
+    }
+
+
+    @Column(name = "car_owner")
+    private String carOwner;
+
+    public String getCarOwner() {
+        return carOwner;
+    }
+
+    public void setCarOwner(String carOwner) {
+        this.carOwner = carOwner;
+    }
+
+    @Column(name = "vehicle_identification_no")
+    private String VIN;
+    @Column
+    private String vehicleType;
+    @Column
+    private String year;
+    @Column(name = "vehicle_make")
+
+    private String make;
+    @Column(name = "vehicle_model")
+
+    private String model;
+    @Column
+    private String plateNo;
+    @Column
+    private String photo;
+
+    public String getRegTown() {
+        return regTown;
+    }
+
+    public void setRegTown(String regTown) {
+        this.regTown = regTown;
+    }
+
+    @Column(name = "registration_Town")
+    private String regTown;
+    @Column
+    private String color;
+    @Column(name = "manufacturer_suggested_resale_price")
+    private String MSRP;
+
+    public String getVIN() {
+        return VIN;
+    }
+
+    public void setVIN(String VIN) {
+        this.VIN = VIN;
+    }
+
+    public String getVehicleType() {
+        return vehicleType;
+    }
+
+    public void setVehicleType(String vehicleType) {
+        this.vehicleType = vehicleType;
+    }
+
+    public String getYear() {
+        return year;
+    }
+
+    public void setYear(String year) {
+        this.year = year;
+    }
+
+    public String getMake() {
+        return make;
+    }
+
+    public void setMake(String make) {
+        this.make = make;
+    }
+
+    public String getModel() {
+        return model;
+    }
+
+    public void setModel(String model) {
+        this.model = model;
+    }
+
+    public String getPlateNo() {
+        return plateNo;
+    }
+
+    public void setPlateNo(String plateNo) {
+        this.plateNo = plateNo;
+    }
+
+    public String getPhoto() {
+        return photo;
+    }
+
+    public void setPhoto(String photo) {
+        this.photo = photo;
+    }
+
+    public String getColor() {
+        return color;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
+    }
+
+    public String getMSRP() {
+        return MSRP;
+    }
+
+    public void setMSRP(String MSRP) {
+        this.MSRP = MSRP;
+    }
+
+   /* public String getJson() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{")
+                .append("\"id\": \"").append(getId()).append("\",")
+                .append("\"parcelTo\": \"").append(getCarName()).append("\",")
+                .append("\"parcelFrom\": \"").append(getCarDescription()).append("\",")
+                .append("\"parcelFrom\": \"").append(getCarOwner()).append("\",")
+                .append("\"parcelFrom\": \"").append(getVIN()).append("\",")
+                .append("\"parcelFrom\": \"").append(getVehicleType()).append("\",")
+                .append("\"parcelFrom\": \"").append(getYear()).append("\",")
+                .append("\"parcelFrom\": \"").append(getMake()).append("\",")
+                .append("\"parcelFrom\": \"").append(getModel()).append("\",")
+                .append("\"parcelFrom\": \"").append(getPlateNo()).append("\",")
+                .append("\"parcelFrom\": \"").append(getPhoto()).append("\",")
+                .append("\"parcelFrom\": \"").append(getColor()).append("\",")
+                .append("\"parcelcost\": \"").append(getMSRP()).append("\"");
+        sb.append("}");
+
+        return sb.toString();
+    }*/
+}
+
