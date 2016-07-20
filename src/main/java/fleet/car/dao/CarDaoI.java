@@ -7,8 +7,9 @@ import java.util.List;
 import javax.persistence.EntityManager;
 
 import fleet.car.model.Car;
+import fleet.generic.dao.GenericDaoI;
 
-public interface CarDaoI {
+public interface CarDaoI  extends GenericDaoI<Car, Long>{
 	
 	Car add(Car car);
 	
@@ -19,6 +20,15 @@ public interface CarDaoI {
 	void delete(Long carId);
 
 	void setEm(EntityManager em);
+	List<Car> sqlList();
+	
+	List<Car> active();
+	
+	List<Car> active2();
+	
+	Car findByIdNq(Long id);
+	
+	
 
 }
 

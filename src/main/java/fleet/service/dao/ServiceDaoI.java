@@ -9,16 +9,7 @@ import fleet.generic.dao.GenericDaoI;
 import fleet.service.model.Service;
 
 public interface ServiceDaoI extends GenericDaoI<Service, Long>{
-	/*
-	Service add(Service service);
 	
-	Service load(Service service);
-	
-	List<Service> list(Service filter);
-	
-	void delete(Long serviceId);
-
-	void setEm(EntityManager em);*/
 				
 	List<Service> active();
 	

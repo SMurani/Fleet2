@@ -10,8 +10,12 @@ public interface CarBeanI {
 	
 	void add(Car car);
 	
+	String load(Long id);
+	
 	List<Car> list();
 
 	boolean delete(Long id);
+	
+	String listInJson();
 
 }

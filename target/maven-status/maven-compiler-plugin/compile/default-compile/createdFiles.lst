@@ -41,6 +41,7 @@ fleet/person/model/Person.class
 fleet/car/dao/CarDaoI.class
 fleet/parcel/action/ParcelAction.class
 fleet/parcel/soapapi/ParcelWs.class
+fleet/car/restapi/CarRestApi.class
 fleet/common/action/WelcomeAction.class
 fleet/region/action/RegionAction.class
 fleet/vehicle/model/Capacity.class

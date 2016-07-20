@@ -1,16 +1,46 @@
 package fleet.car.model;
 
+import java.io.Console;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.Table;
+import javax.persistence.Transient;
+import javax.xml.bind.annotation.XmlRootElement;;
 
+@NamedQueries({
+	@NamedQuery(
+			name = Car.NQ_ALL,
+			query = "FROM Car c"
+	),
+	@NamedQuery(
+			name = Car.NQ_FINDBYID,
+			query = "FROM Car c WHERE c.id=:id"
+	)
+})
 
 @Entity
 @Table(name = "car_cars")
+@XmlRootElement
 public class Car {
+	
+public static final long SerialVersionUI=1L;
+	
+	@Transient
+	public static final String NQ_ALL = "Car.All";
+	
+	@Transient
+	public static final String NQ_FINDBYID = "Car.findById";
+	
+	
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -163,26 +193,31 @@ public class Car {
     public void setMSRP(String MSRP) {
         this.MSRP = MSRP;
     }
+    
+  
 
-   /* public String getJson() {
+    public String getJson() {
         StringBuilder sb = new StringBuilder();
         sb.append("{")
                 .append("\"id\": \"").append(getId()).append("\",")
-                .append("\"parcelTo\": \"").append(getCarName()).append("\",")
-                .append("\"parcelFrom\": \"").append(getCarDescription()).append("\",")
-                .append("\"parcelFrom\": \"").append(getCarOwner()).append("\",")
-                .append("\"parcelFrom\": \"").append(getVIN()).append("\",")
-                .append("\"parcelFrom\": \"").append(getVehicleType()).append("\",")
-                .append("\"parcelFrom\": \"").append(getYear()).append("\",")
-                .append("\"parcelFrom\": \"").append(getMake()).append("\",")
-                .append("\"parcelFrom\": \"").append(getModel()).append("\",")
-                .append("\"parcelFrom\": \"").append(getPlateNo()).append("\",")
-                .append("\"parcelFrom\": \"").append(getPhoto()).append("\",")
-                .append("\"parcelFrom\": \"").append(getColor()).append("\",")
-                .append("\"parcelcost\": \"").append(getMSRP()).append("\"");
+                .append("\"carName\": \"").append(getCarName()).append("\",")
+                .append("\"carComments\": \"").append(getCarDescription()).append("\",")
+                .append("\"carOwner\": \"").append(getCarOwner()).append("\",")
+                .append("\"carVIN\": \"").append(getVIN()).append("\",")
+                .append("\"carType\": \"").append(getVehicleType()).append("\",")
+                .append("\"carYear\": \"").append(getYear()).append("\",")
+                .append("\"carMake\": \"").append(getMake()).append("\",")
+                .append("\"carModel\": \"").append(getModel()).append("\",")
+                .append("\"carRegistrationTown\": \"").append(getRegTown()).append("\",")
+                .append("\"carLicence\": \"").append(getPlateNo()).append("\",")
+                .append("\"carPhoto\": \"").append(getPhoto()).append("\",")
+                .append("\"carColor\": \"").append(getColor()).append("\",")
+                .append("\"carMSRP\": \"").append(getMSRP()).append("\"");
         sb.append("}");
 
         return sb.toString();
-    }*/
+        
+    }
+    
 }
 

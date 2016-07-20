@@ -42,16 +42,15 @@ public class ServiceAction extends HttpServlet {
 
 		if (request.getParameter("id") != null
 				&& !request.getParameter("id").equals("undefined"))
-			service.setId(Long.parseLong(request.getParameter("id")));
-
-
-		
-		service.setServiceTo(request.getParameter("serviceTo"));
-		service.setServiceFrom(request.getParameter("serviceFrom"));
-		service.setServiceDescription(request.getParameter("serviceDescription"));
-		service.setRoute(request.getParameter("route"));
-		service.setServicecost(Double.parseDouble(request
-				.getParameter("serviceCost")));
+		service.setId(Long.parseLong(request.getParameter("id")));
+		service.setServiceDate(request.getParameter("serviceDate"));
+		service.setCar(request.getParameter("serviceCar"));
+		service.setOdometer(request.getParameter("serviceOdometer"));
+		service.setServiceCompleted(request.getParameter("serviceCompleted"));
+		service.setVendor(request.getParameter("serviceVendor"));
+		service.setReference(request.getParameter("serviceReference"));
+		service.setDocument(request.getParameter("serviceDocument"));
+		service.setComment(request.getParameter("serviceComments"));
 
 		serviceBean.add(service);
 

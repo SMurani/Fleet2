@@ -2,45 +2,30 @@ var service = App.extend(App.Cmp, {
 		modelId:'service',
 		httpUrl: './service',
 		responseTarget: 'ajax-content',
-		columnModel: ['serviceTo', 'serviceFrom'],
-		columnSeperator: ' To ',
+		//columnModel: ['serviceTo', 'serviceFrom'],
+		//columnSeperator: ' To ',
 		model:[{
-			id:'service-sender',
-			label:'Date of Service',
-			name:'serviceTo',
+			id:'service-car',
+			label:'Vehicle',
+			name:'serviceCar',
 			type:'text',
+			placeholder:'Select Vehicle',
 			required:'required'
 			
 		},{
-			id : 'service-route',
-			label : 'Vehicle',
-			name : 'route',
-			type : 'select',
-			options : [ {
-				label : 'KBL 557H',
-				value : 'KBL 557H'
-			}, {
-				label : 'KCD 234L',
-				value : 'KCD 234L'
-			}, {
-				label : 'KCH 567J',
-				value : 'KCH 567J'
-			}, {
-				label : 'KAC 456J',
-				value : 'KAC 345J'
-			} ]
-		},{
-			id:'service-recipient ',
-			label:'Odometre Reading',
-			name:'serviceFrom',
-			type:'number',
-			required:'required'
-		},{
-			id:'service-description',
-			label:'Complete Service Task',
-			name:'serviceDescription',
+			id:'service-date ',
+			label:'Date of Service',
+			name:'serviceDate',
 			type:'text',
+			placeholder:'Date of Service',
 			required:'required'
+		},{
+			id:'service-odometre',
+			label:'Odometer Reading',
+			name:'serviceOdometer',
+			type:'number',
+			required:'required',
+			placeholder:'Odometre Reading',
 		}, /*{
 			id: 'service-from',
 			label: 'From',
@@ -55,31 +40,46 @@ var service = App.extend(App.Cmp, {
 			type: 'select',
 			options: [],
 			required: 'required'
-		},*/{
-			id : 'service-route',
-			label : 'Vendor',
-			name : 'route',
-			type : 'select',
-			options : [ {
-				label : 'Toyota Kenya',
-				value : 'Toyota'
-			}, {
-				label : 'Orrient Kenya',
-				value : 'Orrient'
-			}, {
-				label : 'Fast Mechanics',
-				value : 'Fast Mech'
-			}, {
-				label : 'Nomads Wires',
-				value : 'Nomads Wires'
-			} ]
-		}, {
-		id : 'service-cost',
-		label : 'Reference No',
-		name : 'serviceCost',
-		type : 'number',
-		required : 'required'
+		},*/ 
+		{
+		id : 'service-completed',
+		label : 'Completed Service Task',
+		name : 'serviceCompleted',
+		type : 'text',
+		required : 'required',
+            placeholder:'Enter Service Completed'
 	}, {
+		id:'service-vendor',
+		label:'Vendor',
+		name:'serviceVendor',
+		required:'required',
+		type:'text',
+
+                placeholder:'Vendor',
+		
+	},{
+		id:'service-reference',
+		label:'Referece',
+		name:'serviceReference',
+		required:'required',
+		type:'text',
+                placeholder:'Service Reference',
+		
+	},{
+		id:'service-documents',
+		label:'Documents',
+		name:'serviceDocument',
+		type:'file',
+
+		
+	},{
+		id:'service-comments',
+		label:'Comments',
+		name:'serviceComments',
+		type:'textarea',
+                placeholder:'Enter Commets',
+		
+	},{
 			id:'service-id',
 			label:'',
 			name:'id',

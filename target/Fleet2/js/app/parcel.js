@@ -37,7 +37,7 @@ var parcel = App.extend(App.Cmp, {
 			type: 'select',
 			options: [],
 			required: 'required'
-		},{
+		},/*{
 			id : 'parcel-route',
 			label : 'Parcel Route',
 			name : 'route',
@@ -55,7 +55,7 @@ var parcel = App.extend(App.Cmp, {
 				label : 'Nairobi-Machakos',
 				value : 'NAI-MCHKS'
 			} ]
-		}, {
+		},*/ {
 		id : 'parcel-cost',
 		label : 'Parcel Cost',
 		name : 'parcelCost',

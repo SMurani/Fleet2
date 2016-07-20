@@ -61,7 +61,7 @@ var car = {
 
 
 	    	var params = 'carName=' + encodeURIComponent(carName)
-	    				+ '&carVin=' + encodeURIComponent(carVIN)
+	    				+ '&carVIN=' + encodeURIComponent(carVIN)
 						+ '&carType=' + encodeURIComponent(carType)
 						+ '&carYear=' + encodeURIComponent(carYear)
 						+ '&carMake=' + encodeURIComponent(carMake)

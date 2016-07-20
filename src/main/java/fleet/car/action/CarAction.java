@@ -26,8 +26,6 @@ import org.apache.commons.io.output.*;
 
 //import java.awt.List;
 import java.io.File;
-
-
 import java.util.Iterator;
 
 @SuppressWarnings("Serial")
@@ -38,6 +36,7 @@ public class CarAction extends HttpServlet{
 
 	private String uploadsUrl = "/home/sammy/work/fleet/uploads/";
 	
+	private Car car;
 	@EJB
 	private CarBeanI carBean;
 
@@ -181,8 +180,9 @@ public class CarAction extends HttpServlet{
 		resp.println("<th>Year</th>");
 		resp.println("<th>Owner</th>");
 		resp.println("<th>Plate No</th>");
-		resp.println("<th>Licence</th>");
+		resp.println("<th>VIN</th>");
 		resp.println("<th>Color</th>");
+		resp.println("<th>Photo</th>");
 		resp.println("<th>Actions</th>");
 		resp.println("</tr>");
 		resp.println("</thead>");
@@ -219,6 +219,10 @@ public class CarAction extends HttpServlet{
 		resp.println("</div>");
 		resp.println("</div>");
 		resp.println("</CENTER>");
+		
+		
+		//resp.println(carBean.listInJson());
+		
 
 
 	}
@@ -229,6 +233,25 @@ public class CarAction extends HttpServlet{
 		carBean.delete(carId);
 
 	}
+	public void setCar(Car car){
+		this.car=car;
+	}
+	
+	public Car getCar(){
+		return car;
+	}
+	
+	private void load(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		PrintWriter resp = response.getWriter();
+		resp.println(carBean.load(Long.parseLong(request.getParameter("id"))));
+	}
+
+	/*private void list(HttpServletResponse response) throws ServletException,
+		IOException {
+		PrintWriter resp = response.getWriter();
+		resp.println(carBean.listInJson());
+	}*/
 	
 	
 

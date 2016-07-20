@@ -187,18 +187,21 @@ App.Cmp = {
 
 	},
 	model : [],
-	form : function() {
+	/*form : function() {
 		var me = this;
 		var form = ' <form class="form-group" role="form">'
-			+ '<div class="card-header"><h2>Fill in  </h2>'
-			+ '</div>'
 			+ '<div class="card-body card-padding">';
 
 		me.model.forEach(function(el) {
-			form += '<div class="form-group">'
-				+'<label for="inputEmail3" class="col-sm-2 control-label">'+ el.label +'</label>'
-				+'<div class="col-sm-8">'
-				+'<div id="' + el.id + '_div">'
+			form += '<div class="form-group ">'
+				+'<label for="'+el.id+'" class="col-sm-2 control-label">'+ el.label +'</label>'
+			form+='</div>'
+			/!*<div class="col-sm-10">
+				<input type="text" class="form-control" id="inputVehicle1" placeholder="vehicle nickname">
+				</div>
+				</div>*!/
+
+			form+='<div class="col-lg-8">'
 
 			if (el.type == 'select' && el.options) {
 				form += '<select class="form-control" name="' + el.name
@@ -209,19 +212,53 @@ App.Cmp = {
 				});
 				form += '</select>';
 			} else
-				form += '<input type="' + el.type
-					+ '" name="' + el.name + '" class="form-control input-sm" id="'
-					+ el.id + '"placeholder="' + el.placeholder + '" </div></div></div>';
+				form += '<input type="' + el.type + '" name="' + el.name + '" class="form-control" id="' + el.id + '"placeholder="' + el.placeholder + '" >';
+			form +='</div>'
+
 		})
 
-		console.log('this is the stuff');
+
 
 		form += '</div>'
 			+'</form>'
 			+'<div class="col-sm-offset-2 col-sm-10" style="float:right">'
 			+'<a class="btn btn-success" id="' + me.modelId
 			+ '-save">Save</a>'
-			+'</div>';
+			+'</div>';*/
+	form : function() {
+		var me = this;
+		var form = '<form>';
+
+		me.model.forEach(function(el) {
+			form += '<div class="form-group ">'
+				+'<label for="'+el.id+'" class="col-sm-2 control-label">'+ el.label +'</label>'
+			form+='</div>';
+
+			/*<div class="form-group">
+				<label for="inputVehicle2" class="col-sm-2 control-label">VIN/SN</label>
+				<div class="col-sm-10">
+				<input type="text" class="form-control" id="inputVehicle2" placeholder="Vehicle Identification No">
+				</div>
+				</div>*/
+
+			if (el.type == 'select' && el.options) {
+				form += '<select class="form-control" name="' + el.name
+					+ '" id="' + el.id + '">';
+				el.options.forEach(function(opt) {
+					form += '<option value=' + opt.value + '>' + opt.label
+						+ '</option>'
+				});
+				form += '</select>';
+			} else
+				form += '<div id="errorM"></div><input type="' + el.type
+					+ '" name="' + el.name + '" class="form-control" id="'
+					+ el.id + '" <label id="messageErr"></label>'
+
+			form += '</div></div>';
+		})
+
+		form += '</form><a class="btn btn-success" id="' + me.modelId
+			+ '-save">Save</a>';
 
 		me.updateTarget(form);
 		me.getEl(me.modelId + '-save').addEventListener("click", function() {

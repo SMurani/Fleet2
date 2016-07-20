@@ -18,7 +18,7 @@ public class ServiceDao extends GenericDao<Service, Long> implements ServiceDaoI
 		Session session = (Session) getEm().getDelegate();
 		
 		List<Service> services = session.createCriteria(Service.class)
-				.add(Restrictions.isNotNull("service_to"))
+				.add(Restrictions.isNotNull("car"))
 				.list();
 		
 		return services;
@@ -51,18 +51,21 @@ public class ServiceDao extends GenericDao<Service, Long> implements ServiceDaoI
 		
 		List<Service> services = new ArrayList<Service>();
 		
-		List<Object []> results = session.createSQLQuery("select id, service_to, service_from,description,route, cost from service_services")
+		List<Object []> results = session.createSQLQuery("select id, service_date, car,odometer,service_completed, vendor, reference_no,document,comment from service_services")
 				.list();
 		
 		Service service;
 		for(Object [] result : results){
 			service = new Service();
 			if(result[0] != null)service.setId( ((BigInteger) result[0]).longValue());
-			if(result[1] != null)service.setServiceFrom ( (String) result[1]);
-			if(result[2] != null)service.setServiceTo ( (String) result[2]);
-			if(result[3] != null)service.setServiceDescription ( (String) result[3]);
-			if(result[4] != null)service.setRoute ( (String) result[4]);
-			if(result[5] != null)service.setServicecost ( (Double) result[5]);
+			if(result[1] != null)service.setServiceDate ( (String) result[1]);
+			if(result[2] != null)service.setCar ( (String) result[2]);
+			if(result[3] != null)service.setOdometer ( (String) result[3]);
+			if(result[4] != null)service.setServiceCompleted ( (String) result[4]);
+			if(result[5] != null)service.setVendor ( (String) result[5]);
+			if(result[6] != null)service.setReference ( (String) result[6]);
+			if(result[7] != null)service.setDocument ( (String) result[7]);
+			if(result[8] != null)service.setComment ( (String) result[8]);
 			services.add(service);
 			
 			
@@ -72,39 +75,7 @@ public class ServiceDao extends GenericDao<Service, Long> implements ServiceDaoI
 	
 	
 }
-	/*private EntityManager em;
-
 	
-	public Service add(Service service) {
-		
-		return em.merge(service);
-	}
-	
-	
-
-	public Service load(Service service) {
-		
-		return null;
-	}
-
-	@SuppressWarnings("unchecked")
-	public List<Service> list(Service filter) {
-		List<Service>  services = new ArrayList<Service>();
-		Service service = new Service();
-		return em.createQuery("from Service p").getResultList();
-		
-	}
-
-	public void delete(Long serviceId) {
-		
-	}
-
-
-
-	public void setEm(EntityManager em) {
-		this.em=em;
-		
-	}*/
 	
 	
 
