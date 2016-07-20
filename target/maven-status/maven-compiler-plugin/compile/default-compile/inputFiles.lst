@@ -1,12 +1,16 @@
 /home/sammy/workspace/Fleet2/src/main/java/fleet/service/dao/ServiceDaoI.java
+/home/sammy/workspace/Fleet2/src/main/java/fleet/region/action/RegionAction.java
 /home/sammy/workspace/Fleet2/src/main/java/fleet/service/bean/ServiceBeanI.java
 /home/sammy/workspace/Fleet2/src/main/java/fleet/driver/bean/DriverBean.java
 /home/sammy/workspace/Fleet2/src/main/java/fleet/person/dao/PersonDaoI.java
 /home/sammy/workspace/Fleet2/src/main/java/fleet/car/dao/CarDao.java
 /home/sammy/workspace/Fleet2/src/main/java/fleet/generic/dao/GenericDaoI.java
+/home/sammy/workspace/Fleet2/src/main/java/fleet/region/bean/RegionBeanI.java
+/home/sammy/workspace/Fleet2/src/main/java/fleet/region/dao/RegionDaoI.java
 /home/sammy/workspace/Fleet2/src/main/java/fleet/dispatch/dao/DispatchDao.java
 /home/sammy/workspace/Fleet2/src/main/java/fleet/common/action/PersonAction.java
 /home/sammy/workspace/Fleet2/src/main/java/fleet/company/action/CompanyAction.java
+/home/sammy/workspace/Fleet2/src/main/java/fleet/region/model/Region.java
 /home/sammy/workspace/Fleet2/src/main/java/fleet/client/api/ClientApi.java
 /home/sammy/workspace/Fleet2/src/main/java/fleet/dispatch/dao/DispatchDaoI.java
 /home/sammy/workspace/Fleet2/src/main/java/fleet/common/model/ActiveStatus.java
@@ -27,6 +31,8 @@
 /home/sammy/workspace/Fleet2/src/main/java/fleet/driver/bean/DriverBeanI.java
 /home/sammy/workspace/Fleet2/src/main/java/fleet/person/bean/PersonBeanI.java
 /home/sammy/workspace/Fleet2/src/main/java/fleet/car/bean/CarBeanI.java
+/home/sammy/workspace/Fleet2/src/main/java/fleet/region/api/RegionApi.java
+/home/sammy/workspace/Fleet2/src/main/java/fleet/region/dao/RegionDao.java
 /home/sammy/workspace/Fleet2/src/main/java/fleet/company/bean/CompanyBeanI.java
 /home/sammy/workspace/Fleet2/src/main/java/fleet/parcel/bean/ParcelBeanI.java
 /home/sammy/workspace/Fleet2/src/main/java/fleet/vehicle/bean/VehicleBean.java
@@ -56,6 +62,7 @@
 /home/sammy/workspace/Fleet2/src/main/java/fleet/common/action/WelcomeAction.java
 /home/sammy/workspace/Fleet2/src/main/java/fleet/client/bean/ClientBeanI.java
 /home/sammy/workspace/Fleet2/src/main/java/fleet/service/api/ServiceApi.java
+/home/sammy/workspace/Fleet2/src/main/java/fleet/region/bean/RegionBean.java
 /home/sammy/workspace/Fleet2/src/main/java/fleet/company/model/Company.java
 /home/sammy/workspace/Fleet2/src/main/java/fleet/parcel/bean/ParcelBean.java
 /home/sammy/workspace/Fleet2/src/main/java/fleet/common/model/User.java

@@ -189,15 +189,15 @@ App.Cmp = {
 	model : [],
 	form : function() {
 		var me = this;
-		var form = ' <form class="form-horizontal" role="form">'
-			+ '<div class="card-header"><h2>Horizontal Form </h2>'
+		var form = ' <form class="form-group" role="form">'
+			+ '<div class="card-header"><h2>Fill in  </h2>'
 			+ '</div>'
 			+ '<div class="card-body card-padding">';
 
 		me.model.forEach(function(el) {
 			form += '<div class="form-group">'
 				+'<label for="inputEmail3" class="col-sm-2 control-label">'+ el.label +'</label>'
-				+'<div class="col-sm-10">'
+				+'<div class="col-sm-8">'
 				+'<div id="' + el.id + '_div">'
 
 			if (el.type == 'select' && el.options) {
@@ -218,7 +218,10 @@ App.Cmp = {
 
 		form += '</div>'
 			+'</form>'
-
+			+'<div class="col-sm-offset-2 col-sm-10" style="float:right">'
+			+'<a class="btn btn-success" id="' + me.modelId
+			+ '-save">Save</a>'
+			+'</div>';
 
 		me.updateTarget(form);
 		me.getEl(me.modelId + '-save').addEventListener("click", function() {
@@ -366,18 +369,18 @@ App.Cmp = {
 		});
 	},*/
 
-
+/*
 	tableStore: '',
 	model:'',
 
-	table: function(tableUrl){
+	table: function(httpUrl){
 		var me = this;
 		var editId;
 		var delId;
 
 		me.ajaxRequest.call({
 			httpMethod: 'GET',
-			httpUrl: tableUrl,
+			httpUrl: httpUrl,
 			responseTarget: me.responseTarget,
 			updateTarget: function(resp){
 
@@ -453,7 +456,108 @@ App.Cmp = {
 				//me.getEl(me.responseTarget).innerHTML = table;
 			}
 		});
+	},*/
+
+	listView : function() {
+		var me = this;
+
+		me.ajaxRequest.call({
+			httpMethod : me.httpMethod,
+			httpUrl : me.httpUrl,
+			responseTarget : me.responseTarget,
+			updateTarget : function(resp) {
+
+				var table = '<table class= "table table-bordered table-striped table-condensed">'
+				table += "<div class=\"text-right\">";
+				table += "<a class=\"btn btn-success\"  id=\"" + me.modelId + "-create-add-form\">Add</a>";
+				table += "</div>";
+				table += "<tr>";
+
+				me.model.forEach(function (el){
+					table += '<th>' +el.label+ '';
+
+				});
+				table+="</th>";
+				table+="<th></th>";
+				table+="<th></th></tr>";
+
+				var jsonRecords = JSON.parse(resp);
+
+				jsonRecords.forEach(function(el) {
+
+					var approve = "approve-"+el.id;
+					var disapprove ="disapprove-"+el.id;
+					var del ="del-" + el.id;
+					var edit="edit-" + el.id;
+
+					table+='<tr>';
+
+					me.model.forEach(function (model){
+						table += '<td>'  +el[model.name] + '</td>'
+					});
+
+					if (me.modelId == "parcel"){
+						table += "<td> <a class=\"btn btn-danger\"  id=\""+ edit + "\">Update</a></td>";
+						table += '</tr>';
+					}
+
+					else if (me.modelId == "service"){
+						table += "<td> <a class=\"btn btn-primary\"  id=\"" + edit + "\">Edit</a></td>";;
+						table += "<td> <a class=\"btn btn-danger\"  id=\""+ del + "\">Delete</a></td>";
+						table += '</tr>';
+					}
+
+
+				});
+				table+="<table>";
+
+				me.getEl(me.responseTarget).innerHTML = table;
+
+				if (me.getEl(me.responseTarget).innerHTML = table) {
+
+					jsonRecords.forEach(function(el) {
+
+						var approve = "approve-"+el.id;
+						var disapprove ="disapprove-"+el.id;
+						var del ="del-" + el.id;
+						var edit="edit-" + el.id;
+
+						if (me.modelId == "service" ){
+							me.getEl(del).addEventListener('click', function() {
+								me.removeRec(el.id);
+							});
+
+							me.getEl(edit).addEventListener('click', function() {
+								me.loadForm(el.id);
+							});
+
+						}
+
+						else{
+
+							me.getEl(edit).addEventListener('click', function() {
+								me.loadForm(el.id);
+							});
+
+//                            me.getEl(disapprove).addEventListener('click', function() {
+//                                me.disapprove(el.id);
+//
+//                            });
+							me.getEl(me.modelId + "-create-add-form").addEventListener('click', function() {
+								me.form();});
+						}
+
+					});
+
+					me.getEl(me.modelId + "-create-add-form").addEventListener('click', function() {
+						me.form();
+					});
+
+				}
+			}
+		});
 	},
+
 	init : function() {
 		this.listView(this.httpUrl);
 	}

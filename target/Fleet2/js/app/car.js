@@ -52,6 +52,7 @@ var car = {
 			var carModel = document.getElementById('inputVehicle6').value;
 			var carLicence = document.getElementById('inputVehicle7').value;
 			var carRegistrationTown = document.getElementById('inputVehicle8').value;
+			console.log(document.getElementById('inputVehicle9'));
 			var carPhoto = document.getElementById('inputVehicle9').value;
 			var carColor = document.getElementById('inputVehicle10').value;
 			var carMSRP = document.getElementById('inputVehicle11').value;

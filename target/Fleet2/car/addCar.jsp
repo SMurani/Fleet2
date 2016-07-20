@@ -1,39 +1,7 @@
-<%--<div>
-<h4>Car Details </h4>
-<form >
-
-    <div class="panel panel-default col-lg-8 " >
-
-        <div class="panel-body">
-            <div class="form-group">
-                <div class="input-group">
-                    <span class="input-group-addon">Name</span>
-                    <input type="text" class="form-control" placeholder="car name" id="car-name" required="">
-                </div>
-            </div>
-            <div class="form-group">
-                <div class="input-group">
-                    <span class="input-group-addon">Comments</span>
-                    <input type="textarea" class="form-control" placeholder="car owner" id="car-descr" required="">
-                </div>
-            </div>
-
-            <div class="form-group">
-                <div class="input-group">
-                    <span class="input-group-addon">Owner</span>
-                    <input type="text" class="form-control" placeholder="car owner" id="car-owner" required="">
-                </div>
-            </div>
-
-        </div>
-    </div>
-</form>
-</div>--%>
-
 
 <div class="col-lg-12">
     <h4>Register new Vehicle Details</h4>
-    <form class="form-horizontal">
+    <form class="form-horizontal" enctype="multipart/form-data">
 
         <div class="form-group">
             <label for="inputVehicle1" class="col-sm-2 control-label">Vehicle Name*</label>

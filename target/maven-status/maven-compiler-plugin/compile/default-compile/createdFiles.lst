@@ -1,11 +1,14 @@
 fleet/dispatch/bean/DispatchBeanI.class
+fleet/region/api/RegionApi.class
 fleet/client/bean/ClientBean.class
+fleet/region/dao/RegionDao.class
 fleet/dispatch/bean/DispatchBean.class
 fleet/company/model/Company.class
 fleet/generic/dao/GenericDao.class
 fleet/parcel/dao/ParcelDaoI.class
 fleet/service/dao/ServiceDaoI.class
 fleet/company/api/CompanyApi.class
+fleet/region/model/Region.class
 fleet/client/action/ClientAction.class
 fleet/company/bean/CompanyBean.class
 fleet/driver/dao/DriverDaoI.class
@@ -24,9 +27,12 @@ fleet/company/dao/CompanyDaoI.class
 fleet/company/model/ActiveStatus.class
 fleet/common/action/VehicleAction.class
 fleet/service/api/ServiceApi.class
+fleet/region/bean/RegionBeanI.class
 fleet/parcel/restapi/ParcelRestApi.class
+fleet/region/bean/RegionBean.class
 fleet/service/bean/ServiceBeanI.class
 fleet/generic/dao/GenericDaoI.class
+fleet/region/dao/RegionDaoI.class
 fleet/company/action/CompanyAction.class
 fleet/car/bean/CarBeanI.class
 fleet/company/bean/CompanyBeanI.class
@@ -36,6 +42,7 @@ fleet/car/dao/CarDaoI.class
 fleet/parcel/action/ParcelAction.class
 fleet/parcel/soapapi/ParcelWs.class
 fleet/common/action/WelcomeAction.class
+fleet/region/action/RegionAction.class
 fleet/vehicle/model/Capacity.class
 fleet/car/model/Car.class
 fleet/driver/dao/DriverDao.class

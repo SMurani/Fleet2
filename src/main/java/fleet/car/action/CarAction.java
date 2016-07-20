@@ -36,8 +36,7 @@ public class CarAction extends HttpServlet{
 	
 	private Logger log  = Logger.getLogger(getClass());
 
-
-
+	private String uploadsUrl = "/home/sammy/work/fleet/uploads/";
 	
 	@EJB
 	private CarBeanI carBean;
@@ -68,7 +67,7 @@ public class CarAction extends HttpServlet{
 			throws ServletException, IOException{
 		isMultipart = ServletFileUpload.isMultipartContent(request);
 		response.setContentType("text/html");
-		java.io.PrintWriter out = response.getWriter( );
+		/*java.io.PrintWriter out = response.getWriter( );
 		if( !isMultipart ){
 			out.println("<html>");
 			out.println("<head>");
@@ -90,15 +89,17 @@ public class CarAction extends HttpServlet{
 		// Create a new file upload handler
 		ServletFileUpload upload = new ServletFileUpload(factory);
 		// maximum file size to be uploaded.
-		upload.setSizeMax( maxFileSize );
+		upload.setSizeMax( maxFileSize );*/
 
 		try{
 			// Parse the request to get file items.
-			List fileItems = (List) upload.parseRequest(request);
+			//List fileItems = (List) upload.parseRequest(request);
 
 
 			// Process the uploaded file items
-			Iterator i = ((java.util.List<FileItem>) fileItems).iterator();
+			/*Iterator i = ((java.util.List<FileItem>) fileItems).iterator();
+			filePath = request.getSession().getServletContext().getRealPath("/");
+			filePath = filePath + uploadsUrl;
 
 			out.println("<html>");
 			out.println("<head>");
@@ -130,34 +131,31 @@ public class CarAction extends HttpServlet{
 			}
 			out.println("</body>");
 			out.println("</html>");
-		}catch(Exception ex) {
-			System.out.println(ex);
-		}
+*/
 
+			Car car = new Car();
 
-		Car car = new Car();
+		//	filePath = request.getSession().getServletContext().getRealPath("/");
 
-
-		car.setCarName(request.getParameter("carName"));
-		car.setVIN(request.getParameter("carVIN"));
-		car.setVehicleType(request.getParameter("carType"));
-		car.setYear(request.getParameter("carYear"));
-		car.setMake(request.getParameter("carMake"));
-		car.setModel(request.getParameter("carModel"));
-		car.setPlateNo(request.getParameter("carLicence"));
-		car.setRegTown(request.getParameter("carRegistrationTown"));
-		car.setPhoto(request.getParameter("carPhoto"));
-		car.setColor(request.getParameter("carColor"));
-		car.setMSRP(request.getParameter("carMSRP"));
-		car.setCarDescription(request.getParameter("carComments"));
-		car.setCarOwner(request.getParameter("carOwner"));
+			car.setCarName(request.getParameter("carName"));
+			car.setVIN(request.getParameter("carVIN"));
+			car.setVehicleType(request.getParameter("carType"));
+			car.setYear(request.getParameter("carYear"));
+			car.setMake(request.getParameter("carMake"));
+			car.setModel(request.getParameter("carModel"));
+			car.setPlateNo(request.getParameter("carLicence"));
+			car.setRegTown(request.getParameter("carRegistrationTown"));
+			car.setPhoto(uploadsUrl+request.getParameter("carPhoto"));
+			car.setColor(request.getParameter("carColor"));
+			car.setMSRP(request.getParameter("carMSRP"));
+			car.setCarDescription(request.getParameter("carComments"));
+			car.setCarOwner(request.getParameter("carOwner"));
 
 			carBean.add(car);
 
-
-
-
-
+		}catch(Exception ex) {
+			ex.printStackTrace();
+		}
 
 	}
 
@@ -207,7 +205,7 @@ public class CarAction extends HttpServlet{
 			//resp.print("<td>" + (car.getMake()) + "</td>");
 
 
-			//resp.print("<td>" + (car.getPhoto()) + "</td>");
+			resp.print("<td> <img src=\"file://" + (car.getPhoto()) + "\"/></td>");
 
 			//resp.print("<td>" + (car.getCarDescription()) + "</td>");
 			//resp.print("<td>" + (car.getMSRP()) + "</td>");
