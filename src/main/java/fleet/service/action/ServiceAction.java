@@ -45,7 +45,7 @@ public class ServiceAction extends HttpServlet {
 			service.setId(Long.parseLong(request.getParameter("id")));
 
 
-
+		service.setVehicle(request.getParameter("vehicle"));
 		service.setServiceDate(request.getParameter("serviceDate"));
 		//System.out.println("vendorId");
 		service.setVendorId(request.getParameter("vendorId"));

@@ -41,27 +41,27 @@
 
 
                     <div class="form-group">
-                        <input type="text" name="fname" required id="regfname" tabindex="1" class="form-control" placeholder="First Name" value="">
+                        <input type="text" name="fname" required="" id="regfname" tabindex="1" class="form-control" placeholder="First Name" value="">
                     </div>
                     <div class="form-group">
-                        <input type="text" name="lname" required id="reglname" tabindex="1" class="form-control" placeholder="Last Name" value="">
+                        <input type="text" name="lname" required="" id="reglname" tabindex="1" class="form-control" placeholder="Last Name" value="">
                     </div>
                     <div class="form-group">
-                        <input type="number" name="id" required id="regid" tabindex="1" class="form-control" placeholder="ID/Passport" value="">
-                    </div>
-
-                    <div class="form-group">
-                        <input type="email" class="form-control" placeholder="Email">
+                        <input type="number" name="id" required="" id="regid" tabindex="1" class="form-control" placeholder="ID/Passport" value="">
                     </div>
 
                     <div class="form-group">
-                        <input type="text" name="username" required id="regusername" tabindex="1" class="form-control" placeholder="Username" value="">
+                        <input type="email" class="form-control" required="" placeholder="Email">
+                    </div>
+
+                    <div class="form-group">
+                        <input type="text" name="username" required="" id="regusername" tabindex="1" class="form-control" placeholder="Username" value="">
                     </div>
                     <div class="form-group">
-                        <input type="password" name="password" required id="regpassword" tabindex="2" class="form-control" placeholder="Password">
+                        <input type="password" name="password" required="" id="regpassword" tabindex="2" class="form-control" placeholder="Password">
                     </div>
                     <div class="form-group">
-                        <input type="password" name="confpass" required id="regconfirmpass" tabindex="2" class="form-control" placeholder="Confirm Password"><br>
+                        <input type="password" name="confpass" required="" id="regconfirmpass" tabindex="2" class="form-control" placeholder="Confirm Password"><br>
                         </label><label id="register-ajax-content"></label>
                     </div>
 

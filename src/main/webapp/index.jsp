@@ -443,12 +443,12 @@
                       <a href="#" onclick="region.init()"><i class="fa fa-map-marker fa-fw"></i> Regions</a>
                  </li>
                 <li >
-                    <a href="#"><i class="fa fa-book fa-fw"></i> Documents </a>
+                    <a href="#" onclick="view.list()"> <i class="fa fa-book fa-fw"></i> Report </a>
 
 
                 </li>
                 <li >
-                    <a href="#"><i class="fa fa-envelope fa-fw"></i> Email  </a>
+                    <a href="#" onclick="searchPerson()"><i class="fa fa-envelope fa-fw"></i> Email  </a>
 
 
                 </li>
@@ -506,7 +506,9 @@
 
     <script src="js/app/base.app.js"></script>
     <script src="js/app/parent.js"></script>
+    <script src="js/app/search.js"></script>
 
+    <script src="js/app/report.js"></script>
     <script src="js/app/company.js"></script>
     <script src="js/app/vendor.js"></script>
     <script src="js/app/parcel.js"></script>
@@ -515,6 +517,7 @@
 
     <script src="js/app/bus.js"></script>
     <script src="js/app/region.js"></script>
+
 
     <script src="js/app/dispatch.js"></script>
     <script src="js/app/car.js"></script>

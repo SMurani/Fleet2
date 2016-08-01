@@ -2,6 +2,8 @@ package fleet.common.action;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.util.List;
 
 import javax.ejb.EJB;
@@ -55,6 +57,25 @@ public class PersonAction extends HttpServlet {
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
 		User user = new User();
+
+		/*String password = req.getParameter("password");
+			MessageDigest md;
+			try {
+
+				md = MessageDigest.getInstance("SHA-256");
+				String text = "password";
+				md.update(text.getBytes("UTF-8"));
+				byte[] digest = md.digest();
+				String sha = String.format("%064x", new java.math.BigInteger(1, digest));
+				user.setPassword(sha);
+
+			} catch (NoSuchAlgorithmException e1) {
+				e1.printStackTrace();
+
+
+
+		}*/
+
 		user.setPassword(req.getParameter("password"));
 		user.setUsername(req.getParameter("username"));
 		

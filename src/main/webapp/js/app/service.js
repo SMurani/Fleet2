@@ -3,15 +3,19 @@ var service = App.extend(App.Cmp, {
 		httpUrl: './service',
 		responseTarget: 'ajax-content',
 
-		model:[/*{
-			id:'service-car',
-			label:'Vehicle',
-			name:'serviceCar',
+		model:[{
+			id: 'vehicle',
+			label: 'Vehicle',
+			name: 'vehicle',
 			type: 'select',
-            options:[],
-            //required: 'required'
-			
-		},*/{
+			options: [
+				{label: 'Caligraph', value:'Caligraph'},
+				{label: 'Uzito', value:'Uzito'},
+				{label: 'Lopha', value:'Lopha'},
+				{label: 'Kifaru', value:'Kifaru'}
+			],
+			required: 'required'
+		},{
 			id:'service-date ',
 			label:'Date of Service',
 			name:'serviceDate',
@@ -91,7 +95,7 @@ var service = App.extend(App.Cmp, {
 				});
 			});
 			
-			service.model[3].options = options;
+			service.model[4].options = options;
 			console.log(options);
 
 			

@@ -95,22 +95,33 @@ public class Service implements Serializable {
 		this.serviceDate = serviceDate;
 	}
 
+
+
 	/*public Car getCar() {
-		return car;
+            return car;
+        }
+
+        public void setCar(Car car) {
+            this.car = car;
+        }
+
+        public Vendor getVendor() {
+            return vendor;
+        }
+
+        public void setVendor(Vendor vendor) {
+            this.vendor = vendor;
+        }*/
+	@Column
+
+	public String Vehicle;
+	public String getVehicle() {
+		return Vehicle;
 	}
 
-	public void setCar(Car car) {
-		this.car = car;
+	public void setVehicle(String vehicle) {
+		Vehicle = vehicle;
 	}
-
-	public Vendor getVendor() {
-		return vendor;
-	}
-
-	public void setVendor(Vendor vendor) {
-		this.vendor = vendor;
-	}*/
-
 
 
 	public String getOdometer() {
@@ -178,6 +189,7 @@ public class Service implements Serializable {
 		StringBuilder sb = new StringBuilder();
 		sb.append("{")
 				.append("\"id\": \"").append(getId()).append("\",")
+				.append("\"vehicle\": \"").append(getVehicle()).append("\",")
 				.append("\"serviceDate\": \"").append(getServiceDate()).append("\",")
 
 				.append("\"serviceOdometer\": \"").append(getOdometer()).append("\",")

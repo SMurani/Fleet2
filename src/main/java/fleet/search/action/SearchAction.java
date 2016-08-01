@@ -1,6 +1,7 @@
 package fleet.search.action;
 
-import fleet.search.bean.SearchBeanI;
+import java.io.IOException;
+import java.io.PrintWriter;
 
 import javax.ejb.EJB;
 import javax.servlet.ServletException;
@@ -8,12 +9,9 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
-import java.io.PrintWriter;
 
-/**
- * Created by sammy on 7/26/16.
- */
+import fleet.search.bean.SearchBeanI;
+
 @SuppressWarnings("serial")
 @WebServlet("/search/*")
 public class SearchAction extends HttpServlet{
@@ -31,22 +29,24 @@ public class SearchAction extends HttpServlet{
             throws ServletException, IOException{
 
         PrintWriter resp = response.getWriter();
-        String confirmationLink, search;
-        confirmationLink = request.getSession().getAttribute("user").toString();
+        String  search;
         search = request.getParameter("search").toUpperCase();
 
-        int count = searchBean.countCustomerSearch(confirmationLink, search);
+        int count = searchBean.countCustomerSearch(search);
 
         if(count == 0){
             resp.println(count);
         }else{
-            this.searchCar(response, confirmationLink, search);
+            this.searchCustomer(response,  search);
         }
+
+        ;
     }
 
-    public void searchCar(HttpServletResponse response, String confirmationLink, String search)
+    public void searchCustomer(HttpServletResponse response,  String search)
             throws ServletException, IOException{
         PrintWriter resp = response.getWriter();
-        resp.println(searchBean.carsGivenInJson(confirmationLink, search));
+        resp.println(searchBean.driverInJson(search));
     }
+
 }

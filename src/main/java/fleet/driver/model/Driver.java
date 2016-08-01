@@ -57,27 +57,29 @@ public class Driver implements Serializable {
 	@Column(name = "vehicle")
 	private String vehicle;
 
-	@ManyToOne
-	private Car car;
 
-	@Transient
-	private Long carId;
+	/*@ManyToOne
+	private Car car;*/
 
-	@ManyToOne
-	private Region region;
+	/*@Transient
+	private Long carId;*/
 
-	@Transient
-	private Long regionId;
+	/*@ManyToOne
+	private Region region;*/
+
+
+	@Column(name = "region")
+	private String regionId;
 	@Embedded
 	private Address address;
 
-	public Region getRegion() {
+	/*public Region getRegion() {
 		return region;
 	}
 
 	public void setRegion(Region region) {
 		this.region = region;
-	}
+	}*/
 
 
 	/*public Drive(){
@@ -122,11 +124,13 @@ public class Driver implements Serializable {
 	}
 
 
-	public Long getRegionId() {
+	public String getRegionId()
+	{
 		return regionId;
 	}
 
-	public void setRegionId(Long regionId) {
+	public void setRegionId(String regionId)
+	{
 		this.regionId = regionId;
 	}
 
@@ -148,7 +152,7 @@ public class Driver implements Serializable {
 		this.vehicle = vehicle;
 	}
 
-	public Car getCar() {
+	/*public Car getCar() {
 		return car;
 	}
 
@@ -162,7 +166,7 @@ public class Driver implements Serializable {
 
 	public void setCarId(Long carId) {
 		this.carId = carId;
-	}
+	}*/
 
 
 
@@ -173,10 +177,11 @@ public class Driver implements Serializable {
 				.append("\"id\": \"").append(getId()).append("\",")
 				.append("\"fname\": \"").append(getFname()).append("\",")
 				.append("\"idNumber\": \"").append(getIdNumber()).append("\",")
-				.append("\"car\": \"").append(getCar() == null ? "N/A" : getCar().getCarName()).append("\",")
-				.append("\"carId\": \"").append(getCar() == null ? null : getCar().getId()).append("\",")
+				.append("\"car\": \"").append(getVehicle()).append("\",")
+				/*.append("\"carId\": \"").append(getCar() == null ? null : getCar().getId()).append("\",")
 				.append("\"region\": \"").append(getRegion() == null ? "N/A" : getRegion().getName()).append("\",")
-				.append("\"regionId\": \"").append(getRegion() == null ? null : getRegion().getId()).append("\",")
+				.append("\"regionId\": \"").append(getRegion() == null ? null : getRegion().getId()).append("\",")*/
+				.append("\"regionId\": \"").append(getRegionId()).append("\",")
 				.append("\"lname\": \"").append(getLname()).append("\"");
 
 		if(getAddress() != null){

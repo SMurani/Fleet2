@@ -1,6 +1,6 @@
  <div class="col-lg-12">
     <h4>Register new Vehicle Details</h4>
-    <form class="form-horizontal" enctype="multipart/form-data" method="POST" action="./fileUpload">
+    <form class="form-horizontal" enctype="multipart/form-data" method="POST" action="./carfileUpload">
 
            <div class="form-group">
             <label for="inputVehicle1" class="col-sm-2 control-label">Vehicle Name*</label>
@@ -13,38 +13,89 @@
         <div class="form-group">
             <label for="inputVehicle13"  class="col-sm-2 control-label">Owner</label>
             <div class="col-sm-8">
-                <input type="text" class="form-control" id="inputVehicle13" name="carOwner" placeholder="Vehicle Owner">
+                <input type="text" class="form-control" id="inputVehicle13" name="carOwner" placeholder="Vehicle Owner" required="">
             </div>
         </div>
         <div class="form-group">
             <label for="inputVehicle2"  class="col-sm-2 control-label">VIN/SN</label>
             <div class="col-sm-8">
-                <input type="text" class="form-control" id="inputVehicle2" name="carVIN" placeholder="Vehicle Identification No">
+                <input type="text" class="form-control" id="inputVehicle2" name="carVIN" placeholder="Vehicle Identification No" required="">
             </div>
         </div>
 
         <div class="form-group">
             <label for="inputVehicle3"  class="col-sm-2 control-label">Type</label>
-            <div class="col-sm-8">
-                <input type="text" class="form-control" name="carType" id="inputVehicle3" placeholder="vehicle type e.g. Bus">
+            <div class="col-sm-3">
+                <%--<input type="text" class="form-control" name="carType" id="inputVehicle3" placeholder="vehicle type e.g. Bus">--%>
+                <select class="form-control" name="carType" id="inputVehicle3">
+                    <option>Saloon</option>
+                    <option>Sport Car</option>
+                    <option>Pople Mover</option>
+                    <option>Compact SUV</option>
+                    <option>Medium SUV</option>
+                    <option>Large SUV</option>
+                    <option>Lorry and Trellar</option>
+
+                </select>
             </div>
         </div>
         <div class="form-group">
             <label for="inputVehicle4"  class="col-sm-2 control-label">Year</label>
-            <div class="col-sm-8">
-                <input type="date" class="form-control" name="carYear" id="inputVehicle4" placeholder="Vehicle manufactured year">
+            <div class="col-sm-3">
+                <%--<input type="date" class="form-control" name="carYear" id="inputVehicle4" placeholder="Vehicle manufactured year">--%>
+                <select class="form-control" name="carYear" id="inputVehicle4">
+                    <option>2005</option>
+                    <option>2006</option>
+                    <option>2007</option>
+                    <option>2008</option>
+                    <option>2009</option>
+                    <option>2010</option>
+                    <option>2011</option>
+                    <option>2012</option>
+                    <option>2013</option>
+                    <option>2014</option>
+                    <option>2015</option>
+                    <option>2016</option>
+                </select>
             </div>
         </div>
         <div class="form-group">
             <label for="inputVehicle5" class="col-sm-2 control-label">Make</label>
-            <div class="col-sm-8">
-                <input type="text" class="form-control" name="carMake" id="inputVehicle5" placeholder="e.g Toyota">
+            <div class="col-sm-3">
+               <%-- <input type="text" class="form-control" name="carMake" id="inputVehicle5" placeholder="e.g Toyota">--%>
+                <select class="form-control" name="carMake" id="inputVehicle5">
+                    <option>Toyota</option>
+                    <option>Mazda</option>
+                    <option>Daihatsu</option>
+                    <option>Aston Martin</option>
+                    <option>Cadillac</option>
+                    <option>Isuzu</option>
+                    <option>Chevrolet</option>
+
+                </select>
             </div>
         </div>
         <div class="form-group">
             <label for="inputVehicle6"  class="col-sm-2 control-label">Model</label>
-            <div class="col-sm-8">
-                <input type="text" class="form-control" name="carModel" id="inputVehicle6" placeholder="e.g Salon">
+            <div class="col-sm-3">
+                <%--<input type="text" class="form-control" name="carModel" id="inputVehicle6" placeholder="e.g Salon">--%>
+                <select class="form-control" name="carModel" id="inputVehicle6">
+                    <option>Toyota 4Runner </option>
+                    <option>Toyota 86</option>
+                    <option>Toyota Agya</option>
+                    <option>Toyota Allion</option>
+                    <option>Toyota Alphard </option>
+                    <option>Toyota Aurion </option>
+                    <option>Toyota Coaster </option>
+                    <option>Toyota Heavy Duty Truck </option>
+                    <option>Toyota Hiace  </option>
+                    <option>Ford 2GA </option>
+                    <option>Ford Cougar </option>
+                    <option>Ford Executive </option>
+                    <option>Ford Futura </option>
+                    <option>Ford GTX1 </option>
+
+                </select>
             </div>
         </div>
         <div class="form-group">

@@ -2,10 +2,12 @@ fleet/bus/bean/BusBeanI.class
 fleet/dispatch/bean/DispatchBeanI.class
 fleet/bus/action/BusAction.class
 fleet/region/dao/RegionDao.class
+fleet/report/action/ReportAction.class
 fleet/dispatch/bean/DispatchBean.class
 fleet/company/model/Company.class
 fleet/parcel/dao/ParcelDaoI.class
 fleet/service/dao/ServiceDaoI.class
+fleet/report/api/ReportApi.class
 fleet/region/model/Region.class
 fleet/company/bean/CompanyBean.class
 fleet/region/soapapi/RegionWs.class
@@ -17,6 +19,7 @@ fleet/company/model/ActiveStatus.class
 fleet/search/dao/SearchDao.class
 fleet/bus/restapi/BusRestApi.class
 fleet/region/bean/RegionBeanI.class
+fleet/dispatch/action/DocUpload.class
 fleet/parcel/restapi/ParcelRestApi.class
 fleet/service/bean/ServiceBeanI.class
 fleet/vendor/bean/VendorBean.class
@@ -48,7 +51,9 @@ fleet/vendor/soapapi/VendorWs.class
 fleet/car/bean/CarBean.class
 fleet/vendor/dao/VendorDao.class
 fleet/vendor/action/VendorAction.class
+fleet/report/bean/ReportBean.class
 fleet/bus/soapapi/BusWs.class
+fleet/car/action/CarFileUpload.class
 fleet/vendor/model/Vendor.class
 fleet/search/action/SearchAction.class
 fleet/region/api/RegionApi.class
@@ -65,7 +70,6 @@ fleet/person/dao/PersonDAO.class
 fleet/driver/model/Driver.class
 fleet/bus/api/BusApi.class
 fleet/client/restapi/ClientRestApi.class
-fleet/dispatch/action/Upload.class
 fleet/driver/bean/DriverBeanI.class
 fleetmanagement/user/model/User.class
 fleet/client/dao/ClientDaoI.class
@@ -77,7 +81,6 @@ fleet/generic/dao/GenericDaoI.class
 fleet/region/dao/RegionDaoI.class
 fleet/car/bean/CarBeanI.class
 fleet/bus/bean/BusBean.class
-fleet/car/action/FileUpload.class
 fleet/common/model/User.class
 fleet/search/dao/SearchDaoI.class
 fleet/car/dao/CarDaoI.class
@@ -93,14 +96,18 @@ fleet/company/dao/CompanyDao.class
 fleet/dispatch/action/FileUpload.class
 fleet/car/action/Upload.class
 fleet/driver/action/DriverAction.class
+fleet/report/model/Report.class
 fleet/dispatch/model/Dispatch.class
 fleet/car/dao/CarDao.class
+fleet/report/bean/ReportBeanI.class
 fleet/region/restapi/RegionRestApi.class
 fleet/common/action/PersonAction.class
 fleet/common/model/Address.class
 fleet/vendor/bean/VendorBeanI.class
+fleet/report/dao/ReportDao.class
 fleet/client/dao/ClientDao.class
 fleet/dispatch/action/DispatchAction.class
+fleet/report/dao/ReportDaoI.class
 fleet/parcel/api/ParcelApi.class
 fleet/vendor/restapi/VendorRestApi.class
 fleet/car/action/CarAction.class

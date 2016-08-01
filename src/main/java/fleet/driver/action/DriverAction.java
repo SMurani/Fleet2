@@ -45,16 +45,12 @@ public class DriverAction extends HttpServlet {
 				&& !request.getParameter("id").equals("undefined"))
 			driver.setId(Long.parseLong(request.getParameter("id")));
 
-		if(request.getParameter("carId") != null
+		/*if(request.getParameter("carId") != null
 				&& !request.getParameter("carId").equals("undefined"))
-			driver.setCarId(Long.parseLong(request.getParameter("carId")));
+			driver.setCarId(Long.parseLong(request.getParameter("carId")));*/
 
-		if(request.getParameter("regionId") != null
-				&& !request.getParameter("regionId").equals("undefined"))
-			driver.setRegionId(Long.parseLong(request.getParameter("regionId")));
-
-
-
+		driver.setVehicle(request.getParameter("car"));
+		driver.setRegionId(request.getParameter("regionId"));
 		driver.setFname(request.getParameter("fname"));
 		driver.setLname(request.getParameter("lname"));
 		driver.setIdNumber(request.getParameter("idNumber"));

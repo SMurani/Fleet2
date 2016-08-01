@@ -20,24 +20,24 @@ public class Dispatch {
         this.id = id;
     }
 
-    public Car getCar() {
+   /* public Car getCar() {
         return car;
     }
 
     public void setCar(Car car) {
         this.car = car;
-    }
+    }*/
 
-    @ManyToOne
-    private Car car;
-
-
+    /*@ManyToOne
+    private Car car;*/
 
 
-    @Column(name = "vehicle_id")
-    private Long vehicle_id;
-    @Column(name = "client_id")
-    private Long client_id;
+
+
+    @Column(name = "car")
+    private String car;
+    @Column(name = "client")
+    private String client;
     @Column(name = "date_taken")
     private String dateTaken;
     @Column(name = "date_return")
@@ -47,20 +47,20 @@ public class Dispatch {
     @Column
     private String comments;
 
-    public Long getVehicle_id() {
-        return vehicle_id;
+    public String getCar() {
+        return car;
     }
 
-    public void setVehicle_id(Long vehicle_id) {
-        this.vehicle_id = vehicle_id;
+    public void setCar(String car) {
+        this.car = car;
     }
 
-    public Long getClient_id() {
-        return client_id;
+    public String getClient() {
+        return client;
     }
 
-    public void setClient_id(Long client_id) {
-        this.client_id = client_id;
+    public void setClient(String client) {
+        this.client = client;
     }
 
     public String getDateTaken() {

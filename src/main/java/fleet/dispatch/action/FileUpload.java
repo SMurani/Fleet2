@@ -18,6 +18,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.InputStream;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 @WebServlet("/fileUpload")
 @MultipartConfig(maxFileSize = 16177215)
@@ -85,14 +88,17 @@ public class FileUpload extends HttpServlet {
 
                         String path = getServletContext().getRealPath("/");
 
-                        if (Upload.processFile(path, item)) {
+                        if (DocUpload.processFile(path, item)) {
 
                             response.getWriter().println("File uploaded ");
                             dispatchDoc = item.getName().toString();
                             Dispatch dispatch = new Dispatch();
 
-                            dispatch.setVehicle_id(Long.parseLong(dipatchVehicle));
-                            dispatch.setClient_id(Long.parseLong(dispatchClient));
+                            dispatch.setCar(dipatchVehicle);
+                            dispatch.setClient(dispatchClient);
+                            DateFormat simDateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+                            Date date = new Date();
+                            dispatch.setDateTaken(simDateFormat.format(date));
                             dispatch.setDataReturn(dispatchReturnDate);
                             dispatch.setAgreement(dispatchDoc);
 

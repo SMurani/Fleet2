@@ -69,11 +69,11 @@ public class CarAction extends HttpServlet{
 		
 	}
 	
-	/*public void doPost(HttpServletRequest request, HttpServletResponse response)
+	public void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException{
 		isMultipart = ServletFileUpload.isMultipartContent(request);
 		response.setContentType("text/html");
-		*//*java.io.PrintWriter out = response.getWriter( );
+		java.io.PrintWriter out = response.getWriter( );
 		if( !isMultipart ){
 			out.println("<html>");
 			out.println("<head>");
@@ -95,15 +95,15 @@ public class CarAction extends HttpServlet{
 		// Create a new file upload handler
 		ServletFileUpload upload = new ServletFileUpload(factory);
 		// maximum file size to be uploaded.
-		upload.setSizeMax( maxFileSize );*//*
+		upload.setSizeMax( maxFileSize );
 
 		try{
 			// Parse the request to get file items.
-			//List fileItems = (List) upload.parseRequest(request);
+			List fileItems = (List) upload.parseRequest(request);
 
 
 			// Process the uploaded file items
-			*//*Iterator i = ((java.util.List<FileItem>) fileItems).iterator();
+			Iterator i = ((java.util.List<FileItem>) fileItems).iterator();
 			filePath = request.getSession().getServletContext().getRealPath("/");
 			filePath = filePath + uploadsUrl;
 
@@ -137,7 +137,7 @@ public class CarAction extends HttpServlet{
 			}
 			out.println("</body>");
 			out.println("</html>");
-*//*
+
 
 			Car car = new Car();
 
@@ -163,7 +163,7 @@ public class CarAction extends HttpServlet{
 			ex.printStackTrace();
 		}
 
-	}*/
+	}
 
 
 	private void list(HttpServletResponse response)
@@ -263,7 +263,7 @@ public class CarAction extends HttpServlet{
 		resp.println(carBean.listInJson());
 	}
 
-	protected void doPost(final HttpServletRequest request,
+	/*protected void doPost(final HttpServletRequest request,
 						  final HttpServletResponse response) throws ServletException,
 			IOException {
 
@@ -370,7 +370,7 @@ public class CarAction extends HttpServlet{
 				e.printStackTrace();
 			}
 		}
-	}
+	}*/
 	
 	
 

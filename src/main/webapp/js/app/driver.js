@@ -28,9 +28,14 @@ var driver = App.extend(App.Cmp, {
 	},{
 		id: 'driver-vehicle',
 		label: 'Vehicle',
-		name: 'carId',
+		name: 'car',
 		type: 'select',
-		options:[],
+		options: [
+			{label: 'Caligraph', value:'Caligraph'},
+			{label: 'Uzito', value:'Uzito'},
+			{label: 'Lopha', value:'Lopha'},
+			{label: 'Kifaru', value:'Kifaru'}
+		],
 		required: 'required'
 	},{
 		id: 'driver-region',
@@ -96,7 +101,7 @@ var driver = App.extend(App.Cmp, {
 			JSON.parse(resp).forEach(function(el){
 				options.push({
 					label: el.regionName,
-					value: el.id
+					value: el.regionName
 
 				});
 			});

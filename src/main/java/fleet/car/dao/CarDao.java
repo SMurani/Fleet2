@@ -87,7 +87,7 @@ public class CarDao extends GenericDao<Car, Long> implements CarDaoI{
 		
 		return cars.get(0);
 	}
-	
+
 	@SuppressWarnings("unchecked")
 	public List<Car> active() {
 		Session session = (Session) getEm().getDelegate();

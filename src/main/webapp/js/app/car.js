@@ -14,6 +14,23 @@ var car = {
 	    	ajax.open("GET", "./car/action", true);
 	    	ajax.send();
 		},
+	
+		listCars: function(){
+		var ajax = new XMLHttpRequest();
+
+		ajax.onreadystatechange = function(){
+
+			if(ajax.readyState == 4){
+				if(ajax.status == 200){
+					document.getElementById('ajax-content').innerHTML = ajax.responseText;
+				}
+			}
+		}
+
+		ajax.open("GET", "./car/action", true);
+		ajax.send();
+	},
+
 		add: function(){
 	    	var ajax = new XMLHttpRequest();
 	    	
@@ -101,7 +118,7 @@ var car = {
 				}
 			}
 		}
-
+		alert("Delete this Record?");
 		ajax.open("DELETE", "./car/action/?id="+id, true);
 		ajax.send();
 	}
@@ -110,47 +127,3 @@ var car = {
 }
 
 
-
-/* form += '<div class="form-group">'
-               // + '<div class="input-group" id="' + el.id + '_div">'
-                + '<label class="col-sm-2 control-label" id="'+ el.id +'"> ' + el.label + '</label>';
-
-
-                *//*<div class="form-group">
-                            <label for="inputVehicle4" class="col-sm-2 control-label">Vehicle Assigned</label>
-                            <div class="col-sm-10">
-                                <select class="form-control" id="inputVehicle4">
-                                    <option>Kaligraph</option>
-                                    <option>UnityReloaded</option>
-                                    <option>Uzito</option>
-                                    <option>Bazukka</option>
-                                    <option>Street Waker</option>
-                                    <option>Catalyst</option>
-                                </select>
-                            </div>
-                        </div>*//*
-
-
-            if (el.type == 'select' && el.options) {
-                form+='<div class="form-group col-sm-8">'
-                form += '<select class="form-control" name="' + el.name
-                    + '" id="' + el.id + '">';
-                el.options.forEach(function(opt) {
-                    form += '<option value=' + opt.value + '>' + opt.label
-                        + '</option>'
-                });
-                form += '</select>';
-                form+='</div>';
-            } else
-                *//*form += '<div id="errorM"></div><input type="' + el.type
-                    + '" name="' + el.name + '" class="form-control" id="'
-                    + el.id + '" <label id="messageErr"></label>'
-
-            form += '</div>';*//*
-
-            form +='<div class="col-sm-8" id="errorM">'
-                 +'<input type="'+ el.type +'" name="' + el.name + '" class="form-control" id="'+ el.id +'" >'
-            form+='</div>';
-            form+='</div>';
-
-        })*/

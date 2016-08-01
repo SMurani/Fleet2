@@ -1,7 +1,6 @@
 package fleet.search.bean;
 
-import fleet.car.model.Car;
-import fleet.search.dao.SearchDaoI;
+import java.util.List;
 
 import javax.annotation.PostConstruct;
 import javax.ejb.Stateless;
@@ -10,14 +9,16 @@ import javax.ejb.TransactionManagementType;
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import java.util.List;
 
-/**
- * Created by sammy on 7/26/16.
- */
+import fleet.driver.model.Driver;
+import fleet.search.bean.SearchBeanI;
+import fleet.search.dao.SearchDaoI;
+
+
 @Stateless
 @TransactionManagement(TransactionManagementType.CONTAINER)
 public class SearchBean implements SearchBeanI{
+
     @PersistenceContext
     private EntityManager em;
 
@@ -29,29 +30,29 @@ public class SearchBean implements SearchBeanI{
         searchDao.setEm(em);
     }
 
-    public int countCustomerSearch(String confirmationLink, String search) {
-        return searchDao.countCustomerSearch(confirmationLink, search);
+    public int countCustomerSearch( String search) {
+        return searchDao.countCustomerSearch(search);
     }
 
+    public String driverInJson( String search) {
+        Driver filter = new Driver();
 
-    public String carsGivenInJson(String confirmationLink, String search) {
-        Car filter = new Car();
-
-        List<Car> cars = searchDao.carsGivenInJson(filter, confirmationLink, search);
+        List<Driver> services = searchDao.driverInJson(filter, search);
         StringBuilder sb = new StringBuilder();
         sb.append("[");
 
-        int count = searchDao.countCustomerSearch(confirmationLink, search);
-        for(Car car : cars){
-            sb.append(car.getJson());
+        int count = searchDao.countCustomerSearch( search);
+        for(Driver servicesGiven : services){
+            sb.append(servicesGiven.getJson());
 
             count--;
-            if(count>=1)
+            if(count >= 1)
                 sb.append(",");
         }
         sb.append("]");
         return sb.toString();
     }
+
 
 
 }

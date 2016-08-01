@@ -29,7 +29,7 @@ public class DispatchBean implements DispatchBeanI{
 	}
 
 	public void add(Dispatch dispatch) {
-		if(dispatch == null || dispatch.getClient_id() == null)
+		if(dispatch == null || dispatch.getClient() == null)
 			return;
 		dispatchDao.add(dispatch);
 		
