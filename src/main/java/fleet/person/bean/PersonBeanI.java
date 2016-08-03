@@ -13,4 +13,10 @@ public interface PersonBeanI {
 	Boolean login (String username, String password);
 	List<Person> list();
 
+	String userId(String username, String password);
+
+	String userType(String username, String password);
+	List<Person>list2();
+	boolean delete(Long id);
+
 }

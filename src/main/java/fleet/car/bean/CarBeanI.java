@@ -13,6 +13,7 @@ public interface CarBeanI {
 	String load(Long id);
 	
 	List<Car> list();
+	List<Car> list2();
 
 	boolean delete(Long id);
 	

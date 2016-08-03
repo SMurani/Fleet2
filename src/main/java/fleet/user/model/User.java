@@ -1,4 +1,4 @@
-package fleetmanagement.user.model;
+package fleet.user.model;
 
 public class User {
 

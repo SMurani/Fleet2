@@ -4,6 +4,7 @@ package fleet.driver.model;
 
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import fleet.car.model.Car;
 import fleet.common.model.Address;
 import fleet.region.model.Region;
@@ -28,7 +29,8 @@ import javax.xml.bind.annotation.XmlRootElement;
 @Entity
 @Table(name = "driver_drivers")
 @XmlRootElement
-//@JsonInclude(Include.NON_EMPTY)
+
+@JsonInclude(JsonInclude.Include.NON_EMPTY)
 public class Driver implements Serializable {
 
 	public static final long SerialVersionUI=1L;
@@ -47,7 +49,7 @@ public class Driver implements Serializable {
 	private String fname;
 
 	@Column(name = "lname")
-	private String lname;
+	private String lname ;
 
 	@Column(name = "id_number")
 	private String idNumber;
@@ -56,7 +58,16 @@ public class Driver implements Serializable {
 
 	@Column(name = "vehicle")
 	private String vehicle;
+	@Column(name="user_id")
+	private Long userId;
 
+	public Long getUserId() {
+		return userId;
+	}
+
+	public void setUserId(Long userId) {
+		this.userId = userId;
+	}
 
 	/*@ManyToOne
 	private Car car;*/
@@ -73,23 +84,7 @@ public class Driver implements Serializable {
 	@Embedded
 	private Address address;
 
-	/*public Region getRegion() {
-		return region;
-	}
 
-	public void setRegion(Region region) {
-		this.region = region;
-	}*/
-
-
-	/*public Drive(){
-
-	}
-
-	public Driver(Long id, String name) {
-		this.id = id;
-		this.fname = name;
-	}*/
 
 	public Long getId() {
 		return id;
@@ -151,23 +146,6 @@ public class Driver implements Serializable {
 	public void setVehicle(String vehicle) {
 		this.vehicle = vehicle;
 	}
-
-	/*public Car getCar() {
-		return car;
-	}
-
-	public void setCar(Car car) {
-		this.car = car;
-	}
-
-	public Long getCarId() {
-		return carId;
-	}
-
-	public void setCarId(Long carId) {
-		this.carId = carId;
-	}*/
-
 
 
 	@JsonIgnore

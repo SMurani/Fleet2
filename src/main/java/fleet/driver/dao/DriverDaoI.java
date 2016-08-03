@@ -18,6 +18,7 @@ public interface DriverDaoI extends GenericDaoI<Driver, Long>{
 	Driver findByIdNq(Long id);
 
 	List<Driver> sqlList();
+	List<Driver>clientList(Long id);
 
 
 }

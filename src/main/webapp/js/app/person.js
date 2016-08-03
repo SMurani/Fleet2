@@ -1,5 +1,5 @@
 var person = {
-	list: function(){
+	list2: function(){
 		var ajax = new XMLHttpRequest();
 
 		ajax.onreadystatechange = function(){
@@ -14,7 +14,22 @@ var person = {
 		ajax.open("GET", "./person/action", true);
 		ajax.send();
 	},
-	add: function(){
+	list: function(){
+		var ajax = new XMLHttpRequest();
+
+		ajax.onreadystatechange = function(){
+
+			if(ajax.readyState == 4){
+				if(ajax.status == 200){
+					document.getElementById('ajax-content').innerHTML = ajax.responseText;
+				}
+			}
+		}
+
+		ajax.open("GET", "./listUser", true);
+		ajax.send();
+	},
+	/*add: function(){
 		var ajax = new XMLHttpRequest();
 
 		ajax.onreadystatechange = function(){
@@ -28,7 +43,23 @@ var person = {
 
 		ajax.open("GET", "./company/addPerson.jsp", true);
 		ajax.send();
+	},*/
+	add: function(){
+		var ajax = new XMLHttpRequest();
+
+		ajax.onreadystatechange = function(){
+
+			if(ajax.readyState == 4){
+				if(ajax.status == 200){
+					document.getElementById('ajax-content').innerHTML = ajax.responseText;
+				}
+			}
+		}
+
+		ajax.open("GET", "./car/addUser.jsp", true);
+		ajax.send();
 	},
+
 	save: function(){
 		var thisInstance = this;
 		var ajax = new XMLHttpRequest();
@@ -47,12 +78,16 @@ var person = {
 			+ '&username=' + encodeURIComponent(username)
 			+ '&password=' + encodeURIComponent(password);
 
+
+
+
 		if (password == confpass){
 
 			ajax.onreadystatechange = function(){
 
 				if(ajax.readyState == 4){
 					if(ajax.status == 200){
+
 						document.getElementById('register-ajax-content').innerHTML = ajax.responseText;
 					}
 				}
@@ -86,7 +121,7 @@ var person = {
 		ajax.onreadystatechange = function(){
 
 			if(ajax.readyState<4)
-				getElById('ajax-form-content').innerHTML = "<img src='images/people/25x25/1.jpg' width='20px' height='20px'/> Processing...";
+				document.getElementById('ajax-form-content').innerHTML = "<img src='images/people/25x25/1.jpg' width='20px' height='20px'/> Processing...";
 
 			if(ajax.readyState == 4){
 				if(ajax.status == 200){
@@ -102,6 +137,7 @@ var person = {
 		ajax.send(params);
 
 	},
+	
 	remove: function(id){
 		var me = this;
 		var ajax = new XMLHttpRequest();
@@ -114,8 +150,8 @@ var person = {
 				}
 			}
 		}
-
-		ajax.open("DELETE", "./person/action/?id="+id, true);
+		alert("Delete this Record?");
+		ajax.open("DELETE", "./listUser/?id="+id, true);
 		ajax.send();
 	}
 }

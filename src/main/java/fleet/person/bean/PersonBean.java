@@ -51,4 +51,23 @@ public class PersonBean implements PersonBeanI {
 		return personDao.list(new Person());
 	}
 
+	public List<Person> list2() {
+		return personDao.list2();
+	}
+
+	public String userId(String username, String password) {
+
+		return personDao.userId(username,password);
+	}
+
+	public String userType(String username, String password) {
+
+		return personDao.userType(username,password);
+
+	}
+	public boolean delete(Long id) {
+		personDao.delete(id);
+		return true;
+	}
+
 }

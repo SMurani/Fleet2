@@ -149,6 +149,7 @@ public class CarAction extends HttpServlet{
 			car.setYear(request.getParameter("carYear"));
 			car.setMake(request.getParameter("carMake"));
 			car.setModel(request.getParameter("carModel"));
+			car.setStatus(request.getParameter("carStatus"));
 			car.setPlateNo(request.getParameter("carLicence"));
 			car.setRegTown(request.getParameter("carRegistrationTown"));
 			car.setPhoto(uploadsUrl+request.getParameter("carPhoto"));
@@ -189,6 +190,7 @@ public class CarAction extends HttpServlet{
 		resp.println("<th>Plate No</th>");
 		resp.println("<th>VIN</th>");
 		resp.println("<th>Color</th>");
+		resp.println("<th>Status</th>");
 		resp.println("<th>Photo</th>");
 		resp.println("<th>Actions</th>");
 		resp.println("</tr>");
@@ -205,6 +207,7 @@ public class CarAction extends HttpServlet{
 			resp.print("<td>" + (car.getPlateNo()) + "</td>");
 			resp.print("<td>" + (car.getVIN()) + "</td>");
 			resp.print("<td>" + (car.getColor()) + "</td>");
+			resp.print("<td>" + (car.getStatus()) + "</td>");
 			//resp.print("<td>" + (car.getRegTown()) + "</td>");
 
 
@@ -263,115 +266,7 @@ public class CarAction extends HttpServlet{
 		resp.println(carBean.listInJson());
 	}
 
-	/*protected void doPost(final HttpServletRequest request,
-						  final HttpServletResponse response) throws ServletException,
-			IOException {
 
-		fileUpload(request, response);
-	}
-	public void fileUpload(HttpServletRequest request,
-						   HttpServletResponse response) throws ServletException, IOException {
-		boolean isMultipart = ServletFileUpload.isMultipartContent(request);
-		if (isMultipart) {
-			ServletFileUpload upload = new ServletFileUpload();
-			try {
-
-				String carName = null, carVIN = null, carType = null, carYear = null, carMake = null, carModel = null, carLicence = null, carPhoto = null, carRegistrationTown = null;
-
-				String carColor = null,carMSRP=null, carComments=null, carOwner=null;
-				FileItemIterator itr = upload.getItemIterator(request);
-				while (itr.hasNext()) {
-					FileItemStream item = itr.next();
-					if (item.isFormField()) {
-
-						String fieldName = item.getFieldName();
-						InputStream is = item.openStream();
-						byte[] b = new byte[is.available()];
-						is.read(b);
-						String value = new String(b);
-
-						response.getWriter().println(
-								fieldName + ":" + value + "</br>");
-						if (fieldName.equals("carName")) {
-							carName = value.toString();
-
-						} else if (fieldName.equals("carVIN")) {
-							carVIN = value.toString();
-						}
-
-						else if (fieldName.equals("carType")) {
-							carType = value.toString();
-						} else if (fieldName.equals("carYear")) {
-							carYear = value.toString();
-
-						} else if (fieldName.equals("carMake")) {
-							carMake = value.toString();
-						} else if (fieldName.equals("carModel")) {
-							carModel = value.toString();
-						} else if (fieldName.equals("carLicence")) {
-							carLicence = value.toString();
-
-						}else if (fieldName.equals("carPhoto")) {
-							carPhoto = value.toString();
-
-						}else if (fieldName.equals("carRegistrationTown")) {
-							carRegistrationTown = value.toString();
-
-						}else if (fieldName.equals("carColor")) {
-							carColor = value.toString();
-
-						}else if (fieldName.equals("carMSRP")) {
-							carMSRP = value.toString();
-
-						}else if (fieldName.equals("carComments")) {
-							carComments = value.toString();
-
-						} else if (fieldName.equals("carOwner")) {
-							carOwner = value.toString();
-						}
-
-					}
-
-					else {
-
-						String path = getServletContext().getRealPath("/");
-
-						if (Upload.processFile(path, item)) {
-
-							response.getWriter().println("File uploaded ");
-							carPhoto = item.getName().toString();
-							Car car = new Car();
-
-							car.setCarName(carName);
-							car.setVIN(carVIN);
-							car.setVehicleType(carType);
-							car.setYear(carYear);
-							car.setMake(carMake);
-							car.setModel(carModel);
-							car.setPlateNo(carLicence);
-							car.setPhoto(carPhoto);
-							car.setRegTown(carRegistrationTown);
-							car.setColor(carColor);
-							car.setMSRP(carMSRP);
-							car.setCarDescription(carComments);
-							car.setCarOwner(carOwner);
-
-							carBean.add(car);
-
-
-
-
-						} else {
-							response.getWriter().println("File failed");
-						}
-					}
-				}
-			} catch (FileUploadException e) {
-				e.printStackTrace();
-			}
-		}
-	}*/
-	
 	
 
 }

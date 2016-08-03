@@ -64,7 +64,7 @@ public class CarFileUpload extends HttpServlet {
 
                 String carName = null, carVIN = null, carType = null, carYear = null, carMake = null, carModel = null, carLicence = null, carPhoto = null, carRegistrationTown = null;
 
-                String carColor = null,carMSRP=null, carComments=null, carOwner=null;
+                String carColor = null,carMSRP=null, carComments=null, carOwner=null, carStatus = null;
                 FileItemIterator itr = upload.getItemIterator(request);
                 while (itr.hasNext()) {
                     FileItemStream item = itr.next();
@@ -83,6 +83,8 @@ public class CarFileUpload extends HttpServlet {
 
                         } else if (fieldName.equals("carVIN")) {
                             carVIN = value.toString();
+                        }else if (fieldName.equals("carStatus")) {
+                            carStatus = value.toString();
                         }
 
                         else if (fieldName.equals("carType")) {
@@ -127,6 +129,7 @@ public class CarFileUpload extends HttpServlet {
                             response.getWriter().println("File uploaded ");
                             carPhoto = item.getName().toString();
                             Car car = new Car();
+                            String ct="Available";
 
                             car.setCarName(carName);
                             car.setVIN(carVIN);
@@ -136,6 +139,7 @@ public class CarFileUpload extends HttpServlet {
                             car.setModel(carModel);
                             car.setPlateNo(carLicence);
                             car.setPhoto(carPhoto);
+                            car.setStatus(ct);
                             car.setRegTown(carRegistrationTown);
                             car.setColor(carColor);
                             car.setMSRP(carMSRP);

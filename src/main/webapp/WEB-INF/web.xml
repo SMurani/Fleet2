@@ -19,5 +19,8 @@
 			/work/Fleet2/src/main/webapp/uploads/
 		</param-value>
 	</context-param>
+	<session-config>
+		<session-timeout>10</session-timeout>
+	</session-config>
 	
 </web-app>

@@ -51,6 +51,10 @@ public class DriverBean implements DriverBeanI{
 		return driverDao.list(new Driver());
 	}
 
+	public List<Driver> clientList(Long id) {
+
+		return driverDao.clientList(id);
+	}
 
 
 	public boolean delete(Long id) {

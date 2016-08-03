@@ -397,65 +397,25 @@
 
 
                 <li >
-                    <a href="#" onclick="car.list()"><i class="fa fa-automobile fa-fw"></i> Vehicles </a>
+                    <a href="#" onclick="car.listClient()"><i class="fa fa-automobile fa-fw"></i> Available Vehicles </a>
 
 
                 </li>
                 <li >
-                    <a href="#" onclick="driver.init()"><i class="fa fa-users fa-fw"></i> Drivers</a>
+                    <a href="#" onclick="car.book()"><i class="fa fa-users fa-fw"></i> Book for a Car</a>
                 </li>
                 <li >
-                    <a href="#" onclick="client.init()"><i class="fa fa-money fa-fw"></i> Client  </a>
-
-
-                </li>
-                <%-- <li >
-                      <a href="#" onclick="parcel.init()"><i class="fa fa-money fa-fw"></i> Parcel  </a>
-
-
-                  </li>
-                  <li >
-                      <a href="#" onclick="bus.init()"><i class="fa fa-money fa-fw"></i> VehicleTest  </a>
-
-
-                     </li>
-
-                  <li >
-                      <a href="#" onclick="company.init()"><i class="fa fa-user-times fa-fw"></i> Company  </a>
-
-                  </li>--%>
-                <li >
-                    <a href="#" onclick="dispatch.list()"><i class="fa fa-table fa-fw"></i> Dispatch </a>
-
-
-                </li>
-                <li >
-                    <a href="#" onclick="vendor.init()"><i class="fa fa-table fa-fw"></i> Vendor </a>
-
-
-                </li>
-                <li >
-                    <a href="#" onclick="service.init()"><i class="fa fa-server fa-fw"></i> Service  </a>
-
-
-                </li>
-                <li >
-                    <a href="#" onclick="region.init()"><i class="fa fa-map-marker fa-fw"></i> Regions</a>
-                </li>
-                <li >
-                    <a href="#" onclick="view.list()"> <i class="fa fa-book fa-fw"></i> Report </a>
-
-
-                </li>
-                <li >
-                    <a href="#" onclick="searchPerson()"><i class="fa fa-envelope fa-fw"></i> Email  </a>
+                    <a href="#" onclick="car.myBookings()"><i class="fa fa-money fa-fw"></i> My Bookings </a>
 
 
                 </li>
 
                 <li >
-                    <a href="#"><i class="fa fa-calendar-o fa-fw"></i> Calendar</a>
+                    <a href="#" onclick="dispatch.list()"><i class="fa fa-table fa-fw"></i> My Profile</a>
+
+
                 </li>
+
 
 
 
@@ -478,7 +438,7 @@
     <div id="page-wrapper" class="fixed-navbar ">
         <div class="page-header clearfix" data-background="assets/images/enter-key.html">
             <h4 class="heading pull-left"><i class="ti-desktop animated flip"></i> Dashboard <span class="sub-heading">E Fleet Management System</span></h4>
-           
+
         </div>
         <div class="col-md-12">
 

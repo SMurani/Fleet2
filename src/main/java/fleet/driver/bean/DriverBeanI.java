@@ -13,6 +13,8 @@ public interface DriverBeanI {
 
 	List<Driver> list();
 
+	List<Driver>clientList(Long id);
+
 	boolean delete(Long id);
 
 	String listInJson();

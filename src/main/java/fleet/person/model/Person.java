@@ -2,25 +2,30 @@ package fleet.person.model;
 
 import java.io.Serializable;
 
-import javax.persistence.Column;
-import javax.persistence.Embeddable;
-import javax.persistence.Embedded;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 import fleet.common.model.Address;
 import fleet.common.model.User;
+
+
+@NamedQueries({
+		@NamedQuery(
+				name = Person.NQ_ALL,
+				query = "FROM Person p"
+		)
+
+})
 
 @Entity
 @Table(name = "user_users")
 public class Person  implements Serializable{
 
 	private static final long serialVersionUID = 1L;
+	@Transient
+	public static final String NQ_ALL = "Person.All";
 
 	@Id@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name = "id")
 	private Long id;
 
 	@Column(name = "first_name")
@@ -29,7 +34,7 @@ public class Person  implements Serializable{
 	@Column(name = "last_name")
 	private String lName;
 
-	@Column(unique = true)
+	@Column( unique = true)
 	private String personId;
 
 	@Embedded
@@ -70,12 +75,27 @@ public class Person  implements Serializable{
 		this.lName = lastname;
 	}
 
-	public String getId() {
+	/*public String getId() {
 		return personId;
 	}
 
 	public void setId(String id) {
 		this.personId = id;
+	}*/
+
+	public Long getId() {
+		return id;
 	}
 
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public String getPersonId() {
+		return personId;
+	}
+
+	public void setPersonId(String personId) {
+		this.personId = personId;
+	}
 }

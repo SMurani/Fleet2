@@ -409,21 +409,7 @@
 
 
                 </li>
-              <%-- <li >
-                    <a href="#" onclick="parcel.init()"><i class="fa fa-money fa-fw"></i> Parcel  </a>
 
-
-                </li>
-                <li >
-                    <a href="#" onclick="bus.init()"><i class="fa fa-money fa-fw"></i> VehicleTest  </a>
-
-
-                   </li>
-
-                <li >
-                    <a href="#" onclick="company.init()"><i class="fa fa-user-times fa-fw"></i> Company  </a>
-
-                </li>--%>
                 <li >
                     <a href="#" onclick="dispatch.list()"><i class="fa fa-table fa-fw"></i> Dispatch </a>
 
@@ -454,7 +440,7 @@
                 </li>
 
                 <li >
-                    <a href="#"><i class="fa fa-calendar-o fa-fw"></i> Calendar</a>
+                    <a href="#" onclick="person.list()"><i class="fa fa-calendar-o fa-fw"></i> System Users</a>
                 </li>
 
 

@@ -68,6 +68,10 @@ public class DriverDao extends GenericDao<Driver, Long> implements DriverDaoI{
 		return null;
 	}
 
+	public List<Driver> clientList(Long id) {
+		return em.createQuery("from Driver d where d.userId=:id").setParameter("id", id).getResultList();
+	}
+
 }
 
 

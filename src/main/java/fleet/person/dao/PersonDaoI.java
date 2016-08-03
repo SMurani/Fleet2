@@ -12,5 +12,15 @@ public interface PersonDaoI extends GenericDaoI<Person, Long>{
 
 	Boolean login (String username, String password);
 
+	String userId(String username, String password);
+
+	String userType(String username, String password);
+
+	List<Person>list2();
+
+	void delete(Long id);
+
+
+
 
 }

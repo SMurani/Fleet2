@@ -15,7 +15,7 @@ var car = {
 	    	ajax.send();
 		},
 	
-		listCars: function(){
+		listClient: function(){
 		var ajax = new XMLHttpRequest();
 
 		ajax.onreadystatechange = function(){
@@ -27,7 +27,22 @@ var car = {
 			}
 		}
 
-		ajax.open("GET", "./car/action", true);
+		ajax.open("GET", "./clientaction", true);
+		ajax.send();
+	},
+	myBookings: function(){
+		var ajax = new XMLHttpRequest();
+
+		ajax.onreadystatechange = function(){
+
+			if(ajax.readyState == 4){
+				if(ajax.status == 200){
+					document.getElementById('ajax-content').innerHTML = ajax.responseText;
+				}
+			}
+		}
+
+		ajax.open("GET", "./clientBooking", true);
 		ajax.send();
 	},
 
@@ -46,6 +61,22 @@ var car = {
 	    	ajax.open("GET", "./car/addCar.jsp", true);
 	    	ajax.send();
 		},
+	book: function(){
+		var ajax = new XMLHttpRequest();
+
+		ajax.onreadystatechange = function(){
+
+			if(ajax.readyState == 4){
+				if(ajax.status == 200){
+					document.getElementById('ajax-content').innerHTML = ajax.responseText;
+				}
+			}
+		}
+
+		ajax.open("GET", "./car/addUser.jsp", true);
+		ajax.send();
+	},
+	
 		save: function(){
 			var me = this;
 	    	var ajax = new XMLHttpRequest();

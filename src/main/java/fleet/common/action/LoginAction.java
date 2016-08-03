@@ -17,7 +17,7 @@ import javax.servlet.http.HttpSession;
 
 @SuppressWarnings("serial")
 @WebServlet("/welcome")
-public class WelcomeAction extends HttpServlet {
+public class LoginAction extends HttpServlet {
 
 	@EJB
 	private PersonBeanI personBean;
@@ -44,32 +44,69 @@ public class WelcomeAction extends HttpServlet {
 			//loginStatus = userBean.login(username, sha, usertype);
 
 			RequestDispatcher rq = req.getRequestDispatcher("index.jsp");
+			RequestDispatcher rq1 = req.getRequestDispatcher("client.jsp");
+			RequestDispatcher rq2 = req.getRequestDispatcher("error.jsp");
+			RequestDispatcher rq3 = req.getRequestDispatcher("wait.jsp");
 
 			loginStatus = personBean.login(username, password);
+
 			HttpSession session = req.getSession();
 			session.setAttribute("user", username);
+			String uid = personBean.userId(username, password);
+
+
+			session.setAttribute("uid", uid);
+
+		
+
 
 
 			try {
+				String uType = personBean.userType(username, password).toString();
 
 
 				if (loginStatus == true) {
-					rq.forward(req, resp);
+
+					System.out.println("The user ID is" + uid);
+					System.out.println("The user type is " + uType);
+
+					if("1".equals(uType)){
+
+						response.println("index.jsp");
+						rq.forward(req, resp);
+
+					}else if ("2".equals(uType)){
+
+						response.println("client.jsp");
+						rq1.forward(req, resp);
+					}
+					else if ("3".equals(uType)){
+
+						response.println("Sorry your account is not yet activated");
+						rq3.forward(req, resp);
+					}
 
 
-				} else {
-					//RequestDispatcher err = req.getRequestDispatcher("error.jsp");
+					//rq.forward(req, resp);
+
+
+				} else if (loginStatus==false){
+
 					response.println("<p>Invalid login credentials</p>");
+					//rq2.forward(req, resp);
 
-				/*response.println("<font color='red'><b>You have entered incorrect password</b></font>");
-				RequestDispatcher rd = response.getRequestDispatcher("login.jsp");
-				rd.include(request, response);*/
+
+
+
 
 				}
 
 
 			} catch (Exception e) {
 				response.println("<p>An error occured when trying to log in: " + e.getMessage() + "</p>");
+				rq2.forward(req, resp);
+
+
 
 
 			}

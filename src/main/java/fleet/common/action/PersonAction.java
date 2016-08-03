@@ -23,14 +23,16 @@ public class PersonAction extends HttpServlet {
 
 	@EJB	
 	private PersonBeanI personBean;
+	private Person person;
+
 	
-	@Override
-	protected void doGet(HttpServletRequest req, HttpServletResponse resp) 
+
+	protected void list(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
-		// TODO Auto-generated method stub
+
 		
 		PrintWriter writer = resp.getWriter();
-	    List<Person> persons = personBean.list();
+	    List<Person> persons = personBean.list2();
 	    
 	    writer.println("<div class=\"text-right\">");
 	    writer.println("<a class=\"btn btn-success\"  onclick=\"person.add()\">Add</a>");
@@ -56,7 +58,9 @@ public class PersonAction extends HttpServlet {
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
+		
 		User user = new User();
+
 
 		/*String password = req.getParameter("password");
 			MessageDigest md;
@@ -78,11 +82,16 @@ public class PersonAction extends HttpServlet {
 
 		user.setPassword(req.getParameter("password"));
 		user.setUsername(req.getParameter("username"));
+		String uT="3";
+		user.setUserType(uT);
+
 		
 		Person person  = new Person();
 		person.setFirstname(req.getParameter("fname"));
 		person.setLastname(req.getParameter("lname"));
-		person.setId(req.getParameter("id"));;
+		//person.setId(req.getParameter("id"));
+		//person.setPersonId(req.getParameter("id"));
+
 		person.setUser(user);
 		
 		PrintWriter writer = resp.getWriter();

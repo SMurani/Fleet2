@@ -42,6 +42,10 @@ public class CarBean implements CarBeanI{
 		return carDao.list(new Car());
 	}
 
+	public List<Car> list2() {
+		return carDao.list2(new Car());
+	}
+
 	public boolean delete(Long id) {
 		carDao.delete(id);
 

@@ -16,6 +16,7 @@ public interface CarDaoI  extends GenericDaoI<Car, Long>{
 	Car load(Car car);
 	
 	List<Car> list(Car filter);
+	List<Car>list2(Car filter);
 	
 	void delete(Long carId);
 

@@ -39,7 +39,11 @@ public class DriverAction extends HttpServlet {
 	public void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
+		String userId=  request.getSession().getAttribute("uid").toString ();
+		System.out.println(userId);
+
 		Driver driver = new Driver();
+
 
 		if (request.getParameter("id") != null
 				&& !request.getParameter("id").equals("undefined"))
@@ -48,7 +52,7 @@ public class DriverAction extends HttpServlet {
 		/*if(request.getParameter("carId") != null
 				&& !request.getParameter("carId").equals("undefined"))
 			driver.setCarId(Long.parseLong(request.getParameter("carId")));*/
-
+		driver.setUserId(Long.parseLong(userId));
 		driver.setVehicle(request.getParameter("car"));
 		driver.setRegionId(request.getParameter("regionId"));
 		driver.setFname(request.getParameter("fname"));
@@ -94,5 +98,16 @@ public class DriverAction extends HttpServlet {
 	public void setDriver(Driver driver) {
 		this.driver = driver;
 	}
+
+	private void list2(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		PrintWriter resp = response.getWriter();
+		Long userId=  Long.parseLong(request.getSession().getAttribute("uid").toString ());
+
+
+		resp.println(driverBean.clientList(userId));
+
+	}
+
 
 }

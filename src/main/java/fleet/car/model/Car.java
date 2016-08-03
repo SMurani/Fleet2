@@ -68,6 +68,17 @@ public static final long SerialVersionUI=1L;
         this.carName = carName;
     }
 
+    public String getStatus() {
+        return Status;
+    }
+
+    public void setStatus(String status) {
+        Status = status;
+    }
+
+    @Column (name = "car_status" )
+    private String Status;
+
 
     @Column(name = "car_comments")
     private String carDescription;
@@ -211,13 +222,12 @@ public static final long SerialVersionUI=1L;
                 .append("\"carType\": \"").append(getVehicleType()).append("\",")
                 .append("\"carYear\": \"").append(getYear()).append("\",")
                 .append("\"carMake\": \"").append(getMake()).append("\",")
+                .append("\"carStatus\": \"").append(getStatus()).append("\",")
                 .append("\"carModel\": \"").append(getModel()).append("\",")
                 .append("\"carRegistrationTown\": \"").append(getRegTown()).append("\",")
                 .append("\"carLicence\": \"").append(getPlateNo()).append("\",")
                 .append("\"carPhoto\": \"").append(getPhoto()).append("\",")
                 .append("\"carColor\": \"").append(getColor()).append("\",")
-
-
 
                 .append("\"serviceComments\": \"").append(getMSRP()).append("\"");
         sb.append("}");

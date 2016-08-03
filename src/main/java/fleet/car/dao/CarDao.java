@@ -35,6 +35,10 @@ public class CarDao extends GenericDao<Car, Long> implements CarDaoI{
 		return em.createQuery("from Car c").getResultList();
 	}
 
+	public List<Car> list2(Car filter) {
+		return em.createQuery("from Car c where c.Status='Available' ").getResultList();
+	}
+
 
 	public void delete(Long carId)
 	{
