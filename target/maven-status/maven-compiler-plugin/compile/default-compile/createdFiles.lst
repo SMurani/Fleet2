@@ -16,6 +16,7 @@ fleet/car/action/ClientCarAction.class
 fleet/service/dao/ServiceDao.class
 fleet/bus/model/Bus.class
 fleet/client/model/Client.class
+fleet/booking/model/Booking.class
 fleet/bus/dao/BusDaoI.class
 fleet/company/model/ActiveStatus.class
 fleet/search/dao/SearchDao.class
@@ -27,7 +28,9 @@ fleet/service/bean/ServiceBeanI.class
 fleet/vendor/bean/VendorBean.class
 fleet/company/action/CompanyAction.class
 fleet/vendor/dao/VendorDaoI.class
+fleet/booking/dao/BookingDao.class
 fleet/company/bean/CompanyBeanI.class
+fleet/booking/bean/BookingBeanI.class
 fleet/person/model/Person.class
 fleet/parcel/action/ParcelAction.class
 fleet/region/action/RegionAction.class
@@ -49,6 +52,7 @@ fleet/search/bean/SearchBeanI.class
 fleet/service/model/Service.class
 fleet/car/action/CarReport.class
 fleet/common/action/LoginAction.class
+fleet/booking/bean/BookingBean.class
 fleet/vendor/soapapi/VendorWs.class
 fleet/car/bean/CarBean.class
 fleet/vendor/dao/VendorDao.class
@@ -68,6 +72,7 @@ fleet/service/restapi/ServiceRestApi.class
 fleet/search/bean/SearchBean.class
 fleet/car/api/CarApi.class
 fleet/service/action/ServiceAction.class
+fleet/booking/action/BookingAction.class
 fleet/person/dao/PersonDAO.class
 fleet/driver/model/Driver.class
 fleet/bus/api/BusApi.class
@@ -82,6 +87,7 @@ fleet/generic/dao/GenericDaoI.class
 fleet/region/dao/RegionDaoI.class
 fleet/car/bean/CarBeanI.class
 fleet/bus/bean/BusBean.class
+fleet/booking/dao/BookingDaoI.class
 fleet/common/model/User.class
 fleet/search/dao/SearchDaoI.class
 fleet/car/dao/CarDaoI.class

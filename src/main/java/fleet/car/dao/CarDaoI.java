@@ -7,6 +7,7 @@ import java.util.List;
 import javax.persistence.EntityManager;
 
 import fleet.car.model.Car;
+import fleet.car.model.CarBooking;
 import fleet.generic.dao.GenericDaoI;
 
 public interface CarDaoI  extends GenericDaoI<Car, Long>{
@@ -28,6 +29,10 @@ public interface CarDaoI  extends GenericDaoI<Car, Long>{
 	List<Car> active2();
 	
 	Car findByIdNq(Long id);
+
+	CarBooking book(CarBooking book);
+
+	List<CarBooking> listBook();
 	
 	
 

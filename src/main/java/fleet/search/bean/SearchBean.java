@@ -53,6 +53,32 @@ public class SearchBean implements SearchBeanI{
         return sb.toString();
     }
 
+    public String searchByName(String searchParameter) {
+
+        List<Driver> drivers = searchDao.searchByName(searchParameter);
+
+
+        StringBuilder sb = new StringBuilder();
+        sb.append("[");
+
+        int count = searchDao.countofSearchByName(searchParameter);
+
+        for(Driver driver : drivers){
+            sb.append(driver.getJson());
+
+            count--;
+
+            if(count >= 1)
+                sb.append(",");
+        }
+
+        sb.append("]");
+        System.out.println(sb);
+        return sb.toString();
+
+
+    }
+
 
 
 }

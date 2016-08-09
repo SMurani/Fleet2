@@ -15,6 +15,7 @@
 /home/sammy/work/Fleet2/src/main/java/fleet/car/restapi/CarRestApi.java
 /home/sammy/work/Fleet2/src/main/java/fleet/client/action/ClientAction.java
 /home/sammy/work/Fleet2/src/main/java/fleet/service/model/Service.java
+/home/sammy/work/Fleet2/src/main/java/fleet/booking/dao/BookingDaoI.java
 /home/sammy/work/Fleet2/src/main/java/fleet/vendor/bean/VendorBeanI.java
 /home/sammy/work/Fleet2/src/main/java/fleet/company/bean/CompanyBean.java
 /home/sammy/work/Fleet2/src/main/java/fleet/car/api/CarApi.java
@@ -30,6 +31,7 @@
 /home/sammy/work/Fleet2/src/main/java/fleet/car/dao/CarDao.java
 /home/sammy/work/Fleet2/src/main/java/fleet/bus/soapapi/BusWs.java
 /home/sammy/work/Fleet2/src/main/java/fleet/vendor/bean/VendorBean.java
+/home/sammy/work/Fleet2/src/main/java/fleet/booking/model/Booking.java
 /home/sammy/work/Fleet2/src/main/java/fleet/region/bean/RegionBean.java
 /home/sammy/work/Fleet2/src/main/java/fleet/common/model/User.java
 /home/sammy/work/Fleet2/src/main/java/fleet/parcel/dao/ParcelDao.java
@@ -38,6 +40,7 @@
 /home/sammy/work/Fleet2/src/main/java/fleet/driver/model/Driver.java
 /home/sammy/work/Fleet2/src/main/java/fleet/common/action/LoginAction.java
 /home/sammy/work/Fleet2/src/main/java/fleet/service/dao/ServiceDao.java
+/home/sammy/work/Fleet2/src/main/java/fleet/booking/bean/BookingBean.java
 /home/sammy/work/Fleet2/src/main/java/fleet/user/model/User.java
 /home/sammy/work/Fleet2/src/main/java/fleet/vendor/restapi/VendorRestApi.java
 /home/sammy/work/Fleet2/src/main/java/fleet/car/action/CarReport.java
@@ -68,10 +71,12 @@
 /home/sammy/work/Fleet2/src/main/java/fleet/driver/action/DriverAction.java
 /home/sammy/work/Fleet2/src/main/java/fleet/parcel/bean/ParcelBean.java
 /home/sammy/work/Fleet2/src/main/java/fleet/bus/model/Bus.java
+/home/sammy/work/Fleet2/src/main/java/fleet/booking/bean/BookingBeanI.java
 /home/sammy/work/Fleet2/src/main/java/fleet/car/action/ClientCarAction.java
 /home/sammy/work/Fleet2/src/main/java/fleet/generic/dao/GenericDaoI.java
 /home/sammy/work/Fleet2/src/main/java/fleet/client/bean/ClientBeanI.java
 /home/sammy/work/Fleet2/src/main/java/fleet/service/bean/ServiceBeanI.java
+/home/sammy/work/Fleet2/src/main/java/fleet/booking/dao/BookingDao.java
 /home/sammy/work/Fleet2/src/main/java/fleet/company/dao/CompanyDao.java
 /home/sammy/work/Fleet2/src/main/java/fleet/bus/dao/BusDao.java
 /home/sammy/work/Fleet2/src/main/java/fleet/person/action/listUsers.java
@@ -87,6 +92,7 @@
 /home/sammy/work/Fleet2/src/main/java/fleet/car/model/CarBooking.java
 /home/sammy/work/Fleet2/src/main/java/fleet/serviceReport/dao/ClientReportDaoI.java
 /home/sammy/work/Fleet2/src/main/java/fleet/driver/bean/DriverBeanI.java
+/home/sammy/work/Fleet2/src/main/java/fleet/booking/action/BookingAction.java
 /home/sammy/work/Fleet2/src/main/java/fleet/driver/dao/DriverDaoI.java
 /home/sammy/work/Fleet2/src/main/java/fleet/person/dao/PersonDaoI.java
 /home/sammy/work/Fleet2/src/main/java/fleet/generic/dao/GenericDao.java

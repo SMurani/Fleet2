@@ -391,27 +391,27 @@
 
 
                 <li class="active">
-                    <a href="index.jsp"><i class="fa fa-desktop fa-fw"></i> Dashboard</a>
+                    <a href="client.jsp"><i class="fa fa-desktop fa-fw"></i> Dashboard</a>
                 </li>
 
 
 
                 <li >
-                    <a href="#" onclick="car.listClient()"><i class="fa fa-automobile fa-fw"></i> Available Vehicles </a>
+                    <a href="#" onclick="car.listClient()"><i class="fa fa-automobile fa-fw"></i>Our Cars </a>
+
+                </li>
+                <li >
+                    <a href="#" onclick="car.myBookings()"><i class="fa fa-money fa-fw"></i> Book for a Car </a>
 
 
                 </li>
                 <li >
-                    <a href="#" onclick="car.book()"><i class="fa fa-users fa-fw"></i> Book for a Car</a>
-                </li>
-                <li >
-                    <a href="#" onclick="car.myBookings()"><i class="fa fa-money fa-fw"></i> My Bookings </a>
-
-
+                    <a href="#" onclick="booking.UserBook()"><i class="fa fa-users fa-fw"></i> My Bookings</a>
                 </li>
 
+
                 <li >
-                    <a href="#" onclick="dispatch.list()"><i class="fa fa-table fa-fw"></i> My Profile</a>
+                    <a href="#" onclick="booking.report()"><i class="fa fa-table fa-fw"></i> My Profile</a>
 
 
                 </li>
@@ -458,6 +458,7 @@
     <script src="js/app/base.app.js"></script>
     <script src="js/app/parent.js"></script>
     <script src="js/app/search.js"></script>
+    <script src="js/app/booking.js"></script>
 
     <script src="js/app/report.js"></script>
     <script src="js/app/company.js"></script>

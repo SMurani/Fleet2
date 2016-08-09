@@ -19,6 +19,10 @@ public interface PersonDaoI extends GenericDaoI<Person, Long>{
 	List<Person>list2();
 
 	void delete(Long id);
+	void update (Long id);
+	int countApproved();
+	int countUsers();
+
 
 
 

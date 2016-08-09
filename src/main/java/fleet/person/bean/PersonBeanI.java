@@ -18,5 +18,9 @@ public interface PersonBeanI {
 	String userType(String username, String password);
 	List<Person>list2();
 	boolean delete(Long id);
+	boolean update (Long id);
+
+	int countApproved();
+	int countUsers();
 
 }

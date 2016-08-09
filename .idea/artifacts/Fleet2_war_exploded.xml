@@ -7,6 +7,15 @@
           <element id="module-output" name="Fleet2" />
         </element>
         <element id="directory" name="lib">
+          <element id="library" level="project" name="Maven: org.webjars:angular-chart.js:0.7.1" />
+          <element id="library" level="project" name="Maven: org.webjars:angularjs:1.5.5" />
+          <element id="library" level="project" name="Maven: org.webjars:chartjs:2.1.3" />
+          <element id="library" level="project" name="Maven: org.apache.pdfbox:pdfbox:2.0.0" />
+          <element id="library" level="project" name="Maven: org.apache.pdfbox:fontbox:2.0.0" />
+          <element id="library" level="project" name="Maven: com.itextpdf:itextpdf:5.0.6" />
+          <element id="library" level="project" name="Maven: org.bouncycastle:bcmail-jdk14:1.38" />
+          <element id="library" level="project" name="Maven: org.bouncycastle:bcprov-jdk14:1.38" />
+          <element id="library" level="project" name="Maven: org.bouncycastle:bctsp-jdk14:1.38" />
           <element id="library" level="project" name="Maven: log4j:log4j:1.2.17" />
           <element id="library" level="project" name="Maven: javax:javaee-api:7.0" />
           <element id="library" level="project" name="Maven: com.sun.mail:javax.mail:1.5.0" />

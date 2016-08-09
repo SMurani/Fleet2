@@ -69,15 +69,6 @@ public class Driver implements Serializable {
 		this.userId = userId;
 	}
 
-	/*@ManyToOne
-	private Car car;*/
-
-	/*@Transient
-	private Long carId;*/
-
-	/*@ManyToOne
-	private Region region;*/
-
 
 	@Column(name = "region")
 	private String regionId;
@@ -156,9 +147,6 @@ public class Driver implements Serializable {
 				.append("\"fname\": \"").append(getFname()).append("\",")
 				.append("\"idNumber\": \"").append(getIdNumber()).append("\",")
 				.append("\"car\": \"").append(getVehicle()).append("\",")
-				/*.append("\"carId\": \"").append(getCar() == null ? null : getCar().getId()).append("\",")
-				.append("\"region\": \"").append(getRegion() == null ? "N/A" : getRegion().getName()).append("\",")
-				.append("\"regionId\": \"").append(getRegion() == null ? null : getRegion().getId()).append("\",")*/
 				.append("\"regionId\": \"").append(getRegionId()).append("\",")
 				.append("\"lname\": \"").append(getLname()).append("\"");
 

@@ -23,12 +23,14 @@ public class SearchAction extends HttpServlet{
         String [] pathCmp = request.getRequestURI().split("/");
         String path = pathCmp[pathCmp.length-1];
 
+
+
     }
 
     public void doPost(HttpServletRequest request,HttpServletResponse response)
             throws ServletException, IOException{
 
-        PrintWriter resp = response.getWriter();
+      /*  PrintWriter resp = response.getWriter();
         String  search;
         search = request.getParameter("search").toUpperCase();
 
@@ -39,8 +41,16 @@ public class SearchAction extends HttpServlet{
         }else{
             this.searchCustomer(response,  search);
         }
+*/      PrintWriter out = response.getWriter();
+        String checkbox = request.getParameter("search");
+        String searchParameter = request.getParameter("search");
 
-        ;
+        if (checkbox.equals("Name")){
+            searchBean.searchByName(searchParameter);
+            out.println(searchBean.searchByName(searchParameter));
+
+        }
+
     }
 
     public void searchCustomer(HttpServletResponse response,  String search)

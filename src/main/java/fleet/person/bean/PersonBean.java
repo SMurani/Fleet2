@@ -70,4 +70,20 @@ public class PersonBean implements PersonBeanI {
 		return true;
 	}
 
+	public boolean update(Long id) {
+		personDao.update(id);
+		return true;
+	}
+
+	public int countApproved() {
+
+		return personDao.countApproved();
+
+	}
+	public int countUsers() {
+
+		return personDao.countUsers();
+
+	}
+
 }

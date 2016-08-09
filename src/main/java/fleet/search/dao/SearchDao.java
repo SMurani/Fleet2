@@ -49,4 +49,24 @@ public class SearchDao implements SearchDaoI {
 
     }*/
 
+
+
+
+    public List<Driver> searchByName(String searchParameter) {
+        List <Driver>result = em.createQuery("from Driver d where d.fname like :search")
+                .setParameter("search", "%" + searchParameter + "%")
+                .getResultList();
+        System.out.println("This is the result "+result);
+        return result;
+
+    }
+
+
+    public int countofSearchByName(String searchParameter){
+        List result =  em.createQuery("select count (*) from Driver d where d.fname like :search")
+                .setParameter("search", "%" + searchParameter + "%").getResultList();
+        System.out.println(((Long) result.get(0)).intValue());
+        return ((Long) result.get(0)).intValue();
+    }
+
 }

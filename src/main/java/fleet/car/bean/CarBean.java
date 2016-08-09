@@ -15,6 +15,7 @@ import javax.persistence.PersistenceContext;
 import fleet.car.dao.CarDaoI;
 import fleet.car.dao.CarDao;
 import fleet.car.model.Car;
+import fleet.car.model.CarBooking;
 
 @Stateless
 @TransactionManagement(TransactionManagementType.CONTAINER)
@@ -76,7 +77,18 @@ public class CarBean implements CarBeanI{
 		return sb.toString();
 		
 	}
-	
+
+	public void book(CarBooking book) {
+		if(book == null || book.getUsername() == null)
+			return;
+		carDao.book(book);
+
+	}
+
+	public List<CarBooking> carBookingList() {
+		return carDao.listBook();
+	}
+
 	public String load(Long id){
 		
 		Car car=carDao.findByIdNq(id);

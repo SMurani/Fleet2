@@ -106,15 +106,7 @@ public class DispatchAction extends HttpServlet{
             resp.print("<td>" + (dispatch.getClient()) + "</td>");
             resp.print("<td>" + (dispatch.getDateTaken()) + "</td>");
             resp.print("<td>" + (dispatch.getDataReturn()) + "</td>");
-            //resp.print("<td>" + (dispatch.getAgreement()) + "</td>");
-            //resp.print("<td> <i class=\"fa fa-download fa-1x\" aria-hidden=\"true\"></i></td>");
-            //resp.print("<td> <i class=\"fa fa-download fa-1x\" aria-hidden=\"true\"></i> "+uploadsUrl + (dispatch.getAgreement()) + " ></td>");
-            //resp.print("<td>  "+uploadsUrl + (dispatch.getAgreement()) + " ></td>");
             resp.print("<td>"+ "<a href= "+ uploadsUrl + (dispatch.getAgreement()) + ">Download "+dispatch.getAgreement()+"</a>");
-            //resp.print("<td>" + (uploadsUrl +dispatch.getAgreement()) + "</td>");
-            //"+(uploadsUrl + dispatch.getAgreement()) +"
-            //resp.println("<td>" + "<a \"+uploadsUrl + (dispatch.getAgreement() + \"><i class=\"fa fa-download fa-1x\" aria-hidden=\"true\"></i></a>")+ "</td>");
-            //resp.print("<td>" + ("<a class=\"btn btn-sm\" "+uploadsUrl + (dispatch.getAgreement()) + ")\"><i class=\"fa fa-download fa-1x\" aria-hidden=\"true\"></i></a>")+ "</td>");
 
 
             resp.print("<td>" + ("<a class=\"btn btn-sm\"  onclick=\"dispatch.remove(" + dispatch.getId() + ")\"><i class=\"fa fa-trash-o fa-1x\" aria-hidden=\"true\"></i></a>")+ ("<a class=\"btn btn-sm\"  onclick=\"dispatch.remove(\" + dispatch.getId() + \")\"><i class=\"fa fa-pencil fa-1x\" aria-hidden=\"true\"></i></a>")+ "</td>");

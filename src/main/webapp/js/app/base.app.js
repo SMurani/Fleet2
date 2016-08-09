@@ -199,7 +199,7 @@ App.Cmp = {
                             		+ el.id + '" placeholder ="'+el.placeholder+'" required ="'+el.required+'">';
                             	form+='</'+el.type+'>';
 
-                                //<textarea class="form-control" rows="3"></textarea>
+                               
 
             			}
             			else if (el.type == 'number') {
@@ -410,10 +410,7 @@ App.Cmp = {
                                 me.removeRec(el.id);
                             	});
 
-//                            me.getEl(disapprove).addEventListener('click', function() {
-//                                me.disapprove(el.id);
-//
-//                            });
+
 							me.getEl(me.modelId + "-create-add-form").addEventListener('click', function() {
 								me.form();});
 						}

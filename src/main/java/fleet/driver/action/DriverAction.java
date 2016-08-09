@@ -40,7 +40,7 @@ public class DriverAction extends HttpServlet {
 			throws ServletException, IOException {
 
 		String userId=  request.getSession().getAttribute("uid").toString ();
-		System.out.println(userId);
+
 
 		Driver driver = new Driver();
 

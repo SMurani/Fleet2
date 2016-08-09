@@ -429,15 +429,25 @@
                       <a href="#" onclick="region.init()"><i class="fa fa-map-marker fa-fw"></i> Regions</a>
                  </li>
                 <li >
-                    <a href="#" onclick="view.list()"> <i class="fa fa-book fa-fw"></i> Report </a>
+                    <a href="#" onclick="person.report()"> <i class="fa fa-book fa-fw"></i> Report </a>
 
 
                 </li>
                 <li >
-                    <a href="#" onclick="searchPerson()"><i class="fa fa-envelope fa-fw"></i> Email  </a>
+                    <a href="#" onclick="view.list()"> <i class="fa fa-book fa-fw"></i> Print Report </a>
 
 
                 </li>
+                <li >
+                    <a href="#" onclick="booking.list()"><i class="fa fa-envelope fa-fw"></i> Online Booking </a>
+
+
+                </li>
+               <%-- <li >
+                    <a href="#" onclick="searchPerson()"><i class="fa fa-envelope fa-fw"></i> Email  </a>
+
+
+                </li>--%>
 
                 <li >
                     <a href="#" onclick="person.list()"><i class="fa fa-calendar-o fa-fw"></i> System Users</a>
@@ -493,6 +503,7 @@
     <script src="js/app/base.app.js"></script>
     <script src="js/app/parent.js"></script>
     <script src="js/app/search.js"></script>
+    <script src="js/app/booking.js"></script>
 
     <script src="js/app/report.js"></script>
     <script src="js/app/company.js"></script>

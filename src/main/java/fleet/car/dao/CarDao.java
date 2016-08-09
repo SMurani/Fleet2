@@ -7,6 +7,7 @@ import java.util.List;
 
 import javax.persistence.EntityManager;
 
+import fleet.car.model.CarBooking;
 import org.hibernate.Session;
 import org.hibernate.criterion.Restrictions;
 
@@ -24,6 +25,18 @@ public class CarDao extends GenericDao<Car, Long> implements CarDaoI{
 
 	public Car add(Car car) {
 		return em.merge(car);
+	}
+
+	public CarBooking book(CarBooking book) {
+		return em.merge(book);
+	}
+
+	public List<CarBooking> listBook() {
+		List<CarBooking> carBookings = getEm().createNamedQuery(CarBooking.NQ_ALL)
+				.getResultList();
+
+		return carBookings;
+
 	}
 
 	public Car load(Car car) {

@@ -4,7 +4,8 @@ package fleet.car.bean;
 
 import java.util.List;
 
-import fleet.car.model.Car;;
+import fleet.car.model.Car;
+import fleet.car.model.CarBooking;;
 
 public interface CarBeanI {
 	
@@ -18,5 +19,8 @@ public interface CarBeanI {
 	boolean delete(Long id);
 	
 	String listInJson();
+	void book(CarBooking book);
+
+	List<CarBooking>carBookingList();
 
 }

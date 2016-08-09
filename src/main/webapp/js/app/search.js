@@ -30,6 +30,7 @@ function formDisplay(form){
 function searchPerson(){
 
     var form = 	"<div class='panel'>" +
+
         "<div class='panel-heading'>" +
         "<h1 class='panel-title'>Search Drivers by ID</h1>" +
         "</div>" +
@@ -48,6 +49,31 @@ function searchPerson(){
     formDisplay(form);
 }
 //Dispaly Search Results
+
+function search(){
+    var context = this;
+    context.ajaxRequest.call({
+        httpMethod: 'GET',
+        responseTarget: 'search',
+        updateTarget: function (resp){
+            var div = '<div class="container text-center"><p></p>'
+                +'<form class="form-inline" role="form" action="./search" method="post">'
+                +'	<label><h4>Search an event by:</h4></label>'
+                +'<select class="form-control" name="searchvalue">'
+                +'        	      <option value="Name">Name</option>'
+                +'          	      <option value="Venue">Venue</option>'
+                +'            	      <option value="Description">Description</option>'
+                +'                   </select>'
+                +'   <input type="text" class="form-control" name="parameter" placeholder="Enter search parameter: "/>'
+                +'  <a class="btn btn-large btn-warning" onclick ="App.Cmp.submit()" name="search" ">SEARCH</a>'
+                +'</form>'
+
+                +'</div>'
+            context.getEl('search').innerHTML =div;
+        }
+    })
+    
+}
 function searchResults(uri){
     var ajax = new XMLHttpRequest();
 

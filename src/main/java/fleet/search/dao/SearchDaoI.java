@@ -15,6 +15,15 @@ public interface SearchDaoI {
     List<Driver> driverInJson(Driver services, String search);
 
 
+    List<Driver> searchByName(String searchParameter);
+
+   // List<Driver> searchByVehicle(String searchParameter);
+
+    int countofSearchByName(String searchParamter);
+
+    //int countofSearchByVehicle(String searchParameter);
+
+
 
 
 }

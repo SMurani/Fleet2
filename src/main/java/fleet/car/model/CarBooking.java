@@ -3,26 +3,48 @@ package fleet.car.model;
 
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 /**
  * Created by sammy on 8/2/16.
  */
+
+@NamedQueries({
+        @NamedQuery(
+                name = CarBooking.NQ_ALL,
+                query = "FROM CarBooking c"
+        ),
+
+})
 @Entity
 @Table (name="car_booking")
-public class CarBooking {
+public class CarBooking implements Serializable{
+
+    public static final long SerialVersionUI=1L;
+
+    @Transient
+    public static final String NQ_ALL = "CarBooking.All";
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     @Column
     private String car;
     @Column
+    private String username;
+    @Column
+    private String userId;
+    @Column
     private String booingDate;
     @Column
     private String returnDate;
     @Column
-    private String status;
+    private String purpose;
     @Column
-    private String agreement;
+    private String comments;
+
+    @Column
+    private String driver;
 
     public Long getId() {
         return id;
@@ -56,20 +78,43 @@ public class CarBooking {
         this.returnDate = returnDate;
     }
 
-    public String getStatus() {
-        return status;
+    public String getUsername() {
+        return username;
     }
 
-    public void setStatus(String status) {
-        this.status = status;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
-    public String getAgreement() {
-        return agreement;
+    public String getUserId() {
+        return userId;
     }
 
-    public void setAgreement(String agreement) {
-        this.agreement = agreement;
+    public void setUserId(String userId) {
+        this.userId = userId;
     }
 
+    public String getPurpose() {
+        return purpose;
+    }
+
+    public void setPurpose(String purpose) {
+        this.purpose = purpose;
+    }
+
+    public String getComments() {
+        return comments;
+    }
+
+    public void setComments(String comments) {
+        this.comments = comments;
+    }
+
+    public String getDriver() {
+        return driver;
+    }
+
+    public void setDriver(String driver) {
+        this.driver = driver;
+    }
 }
