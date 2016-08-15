@@ -78,6 +78,7 @@ public class DispatchAction extends HttpServlet{
         PrintWriter resp = response.getWriter();
         List<Dispatch> dispatchs = dispatchBean.list();
 
+        resp.println("<h4>Dispatch List</h4>");
         resp.println("<div class=\"text-right\">");
         resp.println("<a class=\"btn btn-success\"  onclick=\"dispatch.add()\">Add</a>");
         resp.println("</div>");
@@ -89,6 +90,7 @@ public class DispatchAction extends HttpServlet{
 
         resp.println("<thead>");
         resp.println("<tr>");
+        resp.println("<th>#</th>");
         resp.println("<th>Vehicle Reg No</th>");
         resp.println("<th>Client Name</th>");
         resp.println("<th>Date Taken</th>");
@@ -102,6 +104,7 @@ public class DispatchAction extends HttpServlet{
 
 
             resp.println("<tr>");
+            resp.print("<td></td>");
             resp.print("<td>" + (dispatch.getCar()) + "</td>");
             resp.print("<td>" + (dispatch.getClient()) + "</td>");
             resp.print("<td>" + (dispatch.getDateTaken()) + "</td>");

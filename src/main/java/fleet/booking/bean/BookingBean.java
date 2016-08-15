@@ -46,6 +46,7 @@ public class BookingBean implements BookingBeanI{
 	}
 
 	public List<Booking> UserBook(String id) {
+
 		return bookingDao.UserBook(id);
 	}
 

@@ -73,7 +73,7 @@ var person = {
 			}
 		}
 
-		ajax.open("GET", "./form.jsp", true);
+		ajax.open("GET", "./morris.html", true);
 		ajax.send();
 	},
 
@@ -96,16 +96,41 @@ var person = {
 			+ '&password=' + encodeURIComponent(password);
 
 
+		console.log(fname.length);
 
 
-		if (password == confpass){
+
+		if (!fname || fname.length==0) {
+			document.getElementById('fname-ajax-content').innerHTML = "First name cannot be blank";
+		}
+		else if (!lname ||lname.length==0) {
+			document.getElementById('lname-ajax-content').innerHTML = "Last name cannot be blank";
+		}
+		else if (id.length ==0) {
+			document.getElementById('iname-ajax-content').innerHTML = "Id number cannot be blank";
+		}
+		else if (username.length ==0) {
+			document.getElementById('uname-ajax-content').innerHTML = "username number cannot be blank";
+		}
+		else if (fname.length <=2){
+			document.getElementById('fname-ajax-content').innerHTML = "Please enter a name that is more than 2 characters";
+		}
+		else if (password.length ==0){
+			document.getElementById('ppname-ajax-content').innerHTML = "Password cannot be blank";
+		}
+		else if (password !=confpass){
+			document.getElementById('pname-ajax-content').innerHTML = "password does not match";
+		}
+		else if ((password == confpass) && (password.length >0)){
 
 			ajax.onreadystatechange = function(){
 
 				if(ajax.readyState == 4){
 					if(ajax.status == 200){
+						window.location="login.jsp";
+						
 
-						document.getElementById('register-ajax-content').innerHTML = ajax.responseText;
+						document.getElementById('successful-ajax-content').innerHTML = ajax.responseText;
 					}
 				}
 			}
@@ -116,7 +141,7 @@ var person = {
 
 		}
 		else{
-			document.getElementById('register-ajax-content').innerHTML = "Password does not match";
+			document.getElementById('register-ajax-content').innerHTML = "An error occured, please input your details again";
 
 		}
 
@@ -137,9 +162,9 @@ var person = {
 
 		ajax.onreadystatechange = function(){
 
-			if(ajax.readyState<4)
+			/*if(ajax.readyState<4)
 				document.getElementById('ajax-form-content').innerHTML = "<img src='images/people/25x25/1.jpg' width='20px' height='20px'/> Processing...";
-
+*/
 			if(ajax.readyState == 4){
 				if(ajax.status == 200){
 
@@ -149,7 +174,7 @@ var person = {
 			}
 		}
 
-		ajax.open("POST", "./welcome", true);
+		ajax.open("POST", "./autostars", true);
 		ajax.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
 		ajax.send(params);
 

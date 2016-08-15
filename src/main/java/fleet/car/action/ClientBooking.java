@@ -91,68 +91,6 @@ public class ClientBooking extends HttpServlet{
 
     }
 
-
-   /* private void list(HttpServletResponse response)
-            throws ServletException, IOException{
-        PrintWriter resp = response.getWriter();
-        List<Car> cars = carBean.list2();
-
-        resp.println("<div class=\"text-right\">");
-
-        resp.println("</div>");
-        resp.println("<CENTER>");
-
-        resp.println("<div class=\"panel-body col-lg-12\">");
-        resp.println("<div class=\"table-responsive\">");
-        resp.println("<table class=\"table table-striped table-bordered table-hover\" id=\"dataTables-example\">");
-
-        resp.println("<thead>");
-        resp.println("<tr>");
-        resp.println("<th>Name</th>");
-        resp.println("<th>Type</th>");
-        resp.println("<th>Model</th>");
-
-        resp.println("<th>Plate No</th>");
-
-        resp.println("<th>Color</th>");
-        resp.println("<th>Photo</th>");
-        resp.println("<th>Actions</th>");
-        resp.println("</tr>");
-        resp.println("</thead>");
-
-        for(Car car : cars){
-
-            resp.println("<tr>");
-            resp.print("<td>" + (car.getCarName()) + "</td>");
-            resp.print("<td>" + (car.getVehicleType()) + "</td>");
-            resp.print("<td>" + (car.getModel()) + "</td>");
-
-            resp.print("<td>" + (car.getPlateNo()) + "</td>");
-
-            resp.print("<td>" + (car.getColor()) + "</td>");
-
-            resp.print("<td> <img src="+uploadsUrl + (car.getPhoto()) + "  width=\"60px\" ></td>");
-
-
-            resp.print("<td>" + ("<a class=\"btn btn-success btn-sm\"  onclick=\"car.book()\">Book Car1</a>")+ "</td>");
-
-            resp.println("</tr>");
-
-
-        }
-
-
-        resp.println("</table>");
-        resp.println("</div>");
-        resp.println("</div>");
-        resp.println("</CENTER>");
-
-
-
-
-
-
-    }*/
     private void list(HttpServletResponse response)
             throws ServletException, IOException{
         PrintWriter resp = response.getWriter();
@@ -177,7 +115,7 @@ public class ClientBooking extends HttpServlet{
 
             resp.print("<div >"
 
-                    +"<a href=\"#\" class=\"media-box\"><img src="+uploadsUrl + (car.getPhoto()) + " width=\"300px\" height=\"200px\"><span class=\"zoom\"><span class=\"icon\"><i class=\"icon-plus\"></i></span></span></a>/"+
+                    +"<a href=\"#\" class=\"media-box\"><img src="+uploadsUrl + (car.getPhoto()) + " width=\"300px\" height=\"200px\"><span class=\"zoom\"><span class=\"icon\"><i class=\"icon-plus\"></i></span></span></a>"+
 
                     "</div>");
             resp.println("</td>");

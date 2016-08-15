@@ -22,5 +22,7 @@ public interface CarBeanI {
 	void book(CarBooking book);
 
 	List<CarBooking>carBookingList();
+	int countCars();
+
 
 }

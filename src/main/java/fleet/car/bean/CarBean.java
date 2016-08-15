@@ -89,6 +89,13 @@ public class CarBean implements CarBeanI{
 		return carDao.listBook();
 	}
 
+	public int countCars() {
+		System.out.println(carDao.countAll());
+		return carDao.countAll();
+
+
+	}
+
 	public String load(Long id){
 		
 		Car car=carDao.findByIdNq(id);

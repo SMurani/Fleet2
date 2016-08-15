@@ -98,11 +98,11 @@ public class CarAction extends HttpServlet{
 		upload.setSizeMax( maxFileSize );
 
 		try{
-			// Parse the request to get file items.
+
 			List fileItems = (List) upload.parseRequest(request);
 
 
-			// Process the uploaded file items
+
 			Iterator i = ((java.util.List<FileItem>) fileItems).iterator();
 			filePath = request.getSession().getServletContext().getRealPath("/");
 			filePath = filePath + uploadsUrl;
@@ -171,7 +171,8 @@ public class CarAction extends HttpServlet{
 			throws ServletException, IOException{
 			PrintWriter resp = response.getWriter();
 			List<Car> cars = carBean.list();
-	    
+		//resp.println(carBean.countCars());
+		resp.println("<h4>Vehicle List</h4>");
 	    resp.println("<div class=\"text-right\">");
         resp.println("<a class=\"btn btn-success\"  onclick=\"car.add()\">Add</a>");
         resp.println("</div>");
@@ -183,6 +184,7 @@ public class CarAction extends HttpServlet{
 
 		resp.println("<thead>");
 		resp.println("<tr>");
+		resp.println("<th>#</th>");
 		resp.println("<th>Name</th>");
 		resp.println("<th>Type</th>");
 		resp.println("<th>Year</th>");
@@ -199,6 +201,7 @@ public class CarAction extends HttpServlet{
 		for(Car car : cars){
 
 			resp.println("<tr>");
+			resp.println("<td></td>");
 			resp.print("<td>" + (car.getCarName()) + "</td>");
 			resp.print("<td>" + (car.getVehicleType()) + "</td>");
 			//resp.print("<td>" + (car.getModel()) + "</td>");
@@ -208,20 +211,11 @@ public class CarAction extends HttpServlet{
 			resp.print("<td>" + (car.getVIN()) + "</td>");
 			resp.print("<td>" + (car.getColor()) + "</td>");
 			resp.print("<td>" + (car.getStatus()) + "</td>");
-			//resp.print("<td>" + (car.getRegTown()) + "</td>");
 
-
-
-			//resp.print("<td>" + (car.getMake()) + "</td>");
-
-
-			//resp.print("<td> <img src=\"file://" + (car.getPhoto()) + "\"/></td>");
-			//resp.print("<td> <img src=\"images/photos/car1.jpg\" width='70px' height='40px'></td>");
 			resp.print("<td> <img src="+uploadsUrl + (car.getPhoto()) + "  width=\"60px\" ></td>");
-			//width="60px" height="60px"
 
-			//resp.print("<td>" + (car.getCarDescription()) + "</td>");
-			//resp.print("<td>" + (car.getMSRP()) + "</td>");
+
+
 			resp.print("<td>" + ("<a class=\"btn btn-sm\"  onclick=\"car.remove(" + car.getId() + ")\"><i class=\"fa fa-trash-o fa-1x\" aria-hidden=\"true\"></i></a>")+ ("<a class=\"btn btn-sm\"  onclick=\"car.remove(\" + car.getId() + \")\"><i class=\"fa fa-pencil fa-1x\" aria-hidden=\"true\"></i></a>")+ "</td>");
 			resp.println("</tr>");
 
@@ -234,7 +228,7 @@ public class CarAction extends HttpServlet{
 		resp.println("</CENTER>");
 		
 		
-		//resp.println(carBean.listInJson());
+
 		
 
 

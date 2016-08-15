@@ -74,7 +74,7 @@ var car = {
 			}
 		}
 
-		ajax.open("GET", "./car/bookcar.jsp", true);
+		ajax.open("GET", "./advanced_table.html", true);
 		ajax.send();
 	},
 	

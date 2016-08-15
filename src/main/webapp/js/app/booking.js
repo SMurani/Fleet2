@@ -95,7 +95,7 @@ var booking = {
 		}
 
 
-		ajax.open("POST", "./booking/add", true);
+		ajax.open("POST", "./booking/", true);
 		ajax.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
 		ajax.send(params);
 	},

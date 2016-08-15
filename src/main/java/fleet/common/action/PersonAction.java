@@ -62,25 +62,15 @@ public class PersonAction extends HttpServlet {
 		User user = new User();
 
 
-		/*String password = req.getParameter("password");
-			MessageDigest md;
-			try {
+		String password = req.getParameter("password");
+		String hashedPass ="";
+		try {
+			hashedPass = hashPassword(password);
+		} catch (NoSuchAlgorithmException e) {
 
-				md = MessageDigest.getInstance("SHA-256");
-				String text = "password";
-				md.update(text.getBytes("UTF-8"));
-				byte[] digest = md.digest();
-				String sha = String.format("%064x", new java.math.BigInteger(1, digest));
-				user.setPassword(sha);
-
-			} catch (NoSuchAlgorithmException e1) {
-				e1.printStackTrace();
-
-
-
-		}*/
-
-		user.setPassword(req.getParameter("password"));
+			e.printStackTrace();
+		}
+		user.setPassword(hashedPass);
 		user.setUsername(req.getParameter("username"));
 		String uT="3";
 		user.setUserType(uT);
@@ -89,8 +79,7 @@ public class PersonAction extends HttpServlet {
 		Person person  = new Person();
 		person.setFirstname(req.getParameter("fname"));
 		person.setLastname(req.getParameter("lname"));
-		//person.setId(req.getParameter("id"));
-		//person.setPersonId(req.getParameter("id"));
+
 
 		person.setUser(user);
 		
@@ -109,6 +98,19 @@ public class PersonAction extends HttpServlet {
 		}
 		
 		
+	}
+
+	public static String hashPassword(String password)
+			throws NoSuchAlgorithmException{
+		MessageDigest md = MessageDigest.getInstance("MD5");
+		md.update(password.getBytes());
+		byte [] b = md.digest();
+		StringBuffer sb = new StringBuffer();
+		for (byte b1 : b) {
+			sb.append(Integer.toHexString(b1 & 0xff).toString());
+		}
+		return sb.toString();
+
 	}
 	
 	

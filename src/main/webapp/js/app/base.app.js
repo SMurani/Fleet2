@@ -313,28 +313,32 @@ App.Cmp = {
 				table += "<div class=\"text-right\">";
 				table += "<a class=\"btn btn-success\"  id=\"" + me.modelId + "-create-add-form\"><i class=\"fa fa-plus fa-1x\" aria-hidden=\"true\"></i></a>";
 				table += "</div>";
-				table += "<tr>";
 
+				table +="<thead>";
+				table +="<tr>";
+				//table += "<th> #</th>";
+				//table +="<th>";
+				table += "<th> # </th>";
 				me.model.forEach(function (el){
 					table += '<th>' +el.label+ '';
 
 				});
-				table += "<td> Actions </td>";;
-                                        table += '</tr>';
-				table+="</th>";
-				table+="<th></th>";
-				table+="<th></th></tr>";
+				table += "<th> Actions </th>";
+				table += "</tr>";
+				table +="</thead>";
+
+
 
 				var jsonRecords = JSON.parse(resp);
 
 				jsonRecords.forEach(function(el) {
 
-					//var approve = "approve-"+el.id;
-					//var disapprove ="disapprove-"+el.id;
+
 					var del ="del-" + el.id;
 					var edit="edit-" + el.id;
 
 					table+='<tr>';
+					table += '<td></td>'
 
 					me.model.forEach(function (model){
 						table += '<td>'  +el[model.name] + '</td>'
@@ -385,8 +389,7 @@ App.Cmp = {
 
 					jsonRecords.forEach(function(el) {
 
-						/*var approve = "approve-"+el.id;
-						var disapprove ="disapprove-"+el.id;*/
+
 						var del ="del-" + el.id;
 						var edit="edit-" + el.id;
 

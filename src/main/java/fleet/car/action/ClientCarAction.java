@@ -104,6 +104,7 @@ public class ClientCarAction extends HttpServlet{
 
         resp.println("<thead>");
         resp.println("<tr>");
+        resp.println("<th>#</th>");
         resp.println("<th>Name</th>");
         resp.println("<th>Type</th>");
         resp.println("<th>Model</th>");
@@ -119,6 +120,7 @@ public class ClientCarAction extends HttpServlet{
         for(Car car : cars){
 
             resp.println("<tr>");
+            resp.print("<td></td>");
             resp.print("<td>" + (car.getCarName()) + "</td>");
             resp.print("<td>" + (car.getVehicleType()) + "</td>");
             resp.print("<td>" + (car.getModel()) + "</td>");

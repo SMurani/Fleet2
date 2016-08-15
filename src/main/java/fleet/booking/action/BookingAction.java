@@ -111,16 +111,16 @@ public class BookingAction extends HttpServlet{
 
 			List<Booking> bookings = bookingBean.list();
 
-		resp.println(bookingBean.countBooking());
-		resp.println(bookingBean.countApproved());
-
+		//resp.println(bookingBean.countBooking());
+		//resp.println(bookingBean.countApproved());
+		resp.println("<h4>Bookings Table</h4>");
 		resp.println("<CENTER>");
 		resp.println("<div class=\"panel-body col-lg-12\">");
 		resp.println("<div class=\"table-responsive\">");
 		resp.println("<table class=\"table table-striped table-bordered table-hover\" id=\"dataTables-example\">");
-
 		resp.println("<thead>");
 		resp.println("<tr>");
+		resp.println("<th>#</th>");
 		resp.println("<th>Date Posted</th>");
 		resp.println("<th>Booking Date</th>");
 		resp.println("<th>To Date</th>");
@@ -137,6 +137,7 @@ public class BookingAction extends HttpServlet{
 
 
 			resp.println("<tr>");
+			resp.println("<td></td>");
 			resp.print("<td>" + (booking.getDataPosted()) + "</td>");
 			resp.print("<td>" + (booking.getReturnDate()) + "</td>");
 			resp.print("<td>" + (booking.getBooingDate()) + "</td>");
@@ -173,7 +174,7 @@ public class BookingAction extends HttpServlet{
 		String id = session.getAttribute("uid").toString();
 		List<Booking> bookings = bookingBean.UserBook(id);
 
-
+		resp.println("<h4>My Bookings</h4>");
 		resp.println("<div class=\"text-right\">");
 		resp.println("<a class=\"btn btn-success\"  onclick=\"booking.add()\">Add</a>");
 		resp.println("</div>");
@@ -184,6 +185,7 @@ public class BookingAction extends HttpServlet{
 
 		resp.println("<thead>");
 		resp.println("<tr>");
+		resp.println("<th>#</th>");
 		resp.println("<th>Date Posted</th>");
 		resp.println("<th>Booking Date</th>");
 		resp.println("<th>To Date</th>");
@@ -201,6 +203,7 @@ public class BookingAction extends HttpServlet{
 
 
 			resp.println("<tr>");
+			resp.println("<td></td>");
 			resp.print("<td>" + (booking.getDataPosted()) + "</td>");
 			resp.print("<td>" + (booking.getReturnDate()) + "</td>");
 			resp.print("<td>" + (booking.getBooingDate()) + "</td>");

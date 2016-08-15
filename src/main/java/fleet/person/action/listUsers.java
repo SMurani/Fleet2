@@ -119,7 +119,7 @@ public class listUsers extends HttpServlet {
                 for(i=1; i<=personBean.countUsers(); i++) {
                     resp.println("<td>"+ (+i) +"</td>");
                 }) "</td>");*/
-                resp.println("<td>"+ (1)+ "</td>");
+                resp.println("<td></td>");
                 resp.print("<td>" + (person.getFirstname()) + "</td>");
                 resp.print("<td>" + (person.getLastname()) + "</td>");
                 resp.print("<td>" + (person.getUser().getUsername()) + "</td>");
@@ -168,6 +168,8 @@ public class listUsers extends HttpServlet {
     public void report (HttpServletResponse response)
             throws ServletException, IOException{
             PrintWriter out=response.getWriter();
+        out.println("<div class=\"container-fluid bg-gray\">");
+
        out.println(" <div class=\"row cards\" id=\"dashboard-tour-stats\">");
         out.println("<div class=\"col-md-3 col-sm-6 col-xs-6\">");
         out.println("<div class=\"widget widget-dashboard widget-info\">");
@@ -211,7 +213,7 @@ public class listUsers extends HttpServlet {
 
         out.println(" </div>");
         out.println("</div>");
-        out.println("<div class=\"separator bottom\"> + </div>");
+        //out.println("<div class=\"separator bottom\"> + </div>");
         out.println(" <div class=\"row\">");
         out.println("<div class=\"col-sm-6 col-xs-12 border right\">");
         int Approved=bookingBeanI.countBooking()-bookingBeanI.countApproved();
@@ -227,6 +229,95 @@ public class listUsers extends HttpServlet {
 
         out.println("</div>");
 
+
+
+
+        out.println("<div class=\"col-md-3 col-sm-6 col-xs-6\">");
+
+                out.println(" <div class=\"widget widget-dashboard widget-danger\">");
+                out.println("<div class=\"row\">");
+                out.println("<div class=\"col-sm-4 hidden-xs text-center\">");
+                out.println("<i class=\"fa fa-shopping-cart fa-fw fa-4x\"></i>");
+                out.println("</div>");
+                out.println("<div class=\"col-sm-8 col-xs-12 text-right\">");
+                out.println("<span class=\"text-uppercase\">Total Cars in the System</span>");
+                out.println("<h2>27</h2>");
+                out.println("</div>");
+                out.println("</div>");
+                out.println("<div class=\"separator bottom\"></div>");
+                out.println("<div class=\"row\">");
+                out.println("<div class=\"col-xs-9 text-center reset margin padding left right\" +(onclick=\"cars.list()\")+>");
+                out.println("<span class=\"btn btn-outline btn-inverse btn-block text-uppercase clearfix\">");
+                out.println("view Cars");
+                out.println("<i class=\"fa fa-arrow-circle-o-right pull-right\"></i>");
+                out.println("</span>");
+                out.println("</div>");
+                out.println("</div>");
+                out.println("</div>");
+
+                out.println("</div>");
+
+
+        out.println("<div class=\"col-md-3 col-sm-6 col-xs-6\">");
+
+        out.println("<div class=\"widget widget-dashboard widget-primary\">");
+        out.println(" <div class=\"row\">");
+        out.println("<div class=\"col-sm-4 hidden-xs text-center\">");
+        out.println("<i class=\"fa fa-envelope-o fa-fw fa-4x\"></i>");
+        out.println(" </div>");
+        out.println("<div class=\"col-sm-8 col-xs-12 text-right\">");
+        out.println("<span class=\"text-uppercase\">messages today</span>");
+        out.println("<h2>789</h2>");
+        out.println("</div>");
+        out.println(" </div>");
+        out.println("<div class=\"separator bottom\"></div>");
+        out.println("<div class=\"row\">");
+        out.println("<div class=\"col-xs-9 text-center reset margin padding left right\">");
+        out.println(" <span class=\"btn btn-outline btn-danger btn-block text-uppercase clearfix\">");
+        out.println(" view messages");
+        out.println("  <i class=\"fa fa-arrow-circle-o-right pull-right\"></i>");
+        out.println("</span>");
+        out.println("</div>");
+        out.println(" </div>");
+        out.println("</div>");
+
+        out.println(" </div>");
+
+
+        out.println("   <div class=\"row\">");
+
+        out.println("  <div class=\"col-md-8\">");
+
+
+        out.println(" <div class=\"panel\" id=\"dashboard-tour-visits\">");
+        out.println("   <div class=\"panel-heading clearfix\">");
+        out.println(" <!-- Date Picker -->");
+        out.println(" <div id=\"reportrange\" class=\"btn btn-info pull-right\">");
+        out.println("  <i class=\"fa fa-calendar fa-lg\"></i>");
+        out.println("  <span>February 3, 2014 - March 5, 2014</span> <b class=\"caret\"></b>");
+        out.println("  </div>");
+        out.println("  <h4 class=\"pull-left\">Website Stats</h4>");
+        out.println("  </div>");
+        out.println("  <div class=\"panel-body\">");
+        out.println("   <div id=\"website-stats\" style=\"position: relative;height: 320px;\"></div>");
+        out.println(" </div>");
+        out.println(" <div class=\"inner-t inner-b text-center clearfix\">");
+        out.println("  <div class=\"col-xs-4 border right\">");
+        out.println("   <div class=\"h3 font-bold\">35k</div>");
+        out.println(" <small class=\"text-muted\">Friends</small>");
+        out.println(" </div>");
+        out.println("  <div class=\"col-xs-4\">");
+        out.println("  <div class=\"h3 font-bold\">50</div>");
+        out.println(" <small class=\"text-muted\">New Posts</small>");
+        out.println("  </div>");
+        out.println(" <div class=\"col-xs-4 border left\">");
+        out.println(" <div class=\"h3 font-bold\">12</div>");
+        out.println(" <small class=\"text-muted\">Request(s)</small>");
+        out.println("  </div>");
+        out.println(" </div>");
+        out.println("  </div>");
+
+        out.println("  </div>");
     }
 
 
