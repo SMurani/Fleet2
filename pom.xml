@@ -8,7 +8,7 @@
   <name>Fleet2 Maven Webapp</name>
   <url>http://maven.apache.org</url>
   <properties>
-    <junit.version>4.12</junit.version>
+    <junit.version>4.13.1</junit.version>
     <hibernate.version>4.3.6.Final</hibernate.version>
     <apache.common.version>3.3.2</apache.common.version>
   </properties>
